@@ -1,9 +1,10 @@
 # Monte seu plano — Revenda Mais
 
-Página em etapas para readequar clientes de planos antigos à linha de planos atual.
-O cliente escolhe módulo a módulo (Gestão, Financeiro/estoque, CRM, Nota Fiscal e complementos)
-e só no final vê os valores no mensal e no anual, separados entre **cartão** (sistema e módulos)
-e **boleto pós-pago** (CRM e IA SDR), com a mensalidade total. O botão final abre o WhatsApp do
+Página em etapas para clientes criarem ou trocarem o plano Revenda Mais.
+O cliente escolhe módulo a módulo (Gestão, Financeiro/estoque, Assinatura Eletrônica, CRM e Agente de IA,
+NF-e com integração Renave e NFS-e) e só no final vê os valores no mensal e no anual, separados entre
+**cartão** (sistema e módulos) e **boleto pós-pago** (CRM e Agente de IA), com a mensalidade total.
+Sem Sistema de Gestão não há financeiro nem notas fiscais. O botão final abre o WhatsApp do
 consultor com o plano já preenchido.
 
 ## Link por consultor
@@ -18,4 +19,4 @@ index.html?wa=5541999990000&consultor=Ana%20Souza&loja=Federal%20Car
 
 ## Preços e regras
 
-Ficam no objeto `CONFIG`, no início do `<script>` do `index.html` (mesma tabela do Gerador de Proposta).
+Ficam no objeto `CONFIG`, no início do `<script>` do `index.html` (tabela de readequação de planos).
