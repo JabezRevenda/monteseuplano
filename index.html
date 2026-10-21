@@ -30,7 +30,7 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.45;-webkit-font-smoothing:antialiased}
+body{font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);background:#fff;line-height:1.45;-webkit-font-smoothing:antialiased}
 button{font-family:inherit;cursor:pointer;color:inherit}
 .hidden{display:none!important}
 
@@ -44,21 +44,25 @@ header.site{background:#fff;border-bottom:1px solid var(--border)}
 .consultor b{display:block;color:var(--text);font-size:13px}
 .consultor .av{width:30px;height:30px;border-radius:50%;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:700;font-size:12px}
 
-/* Coluna única */
-.wrap{max-width:640px;margin:0 auto;padding:20px 16px 48px}
-.intro h1{font-size:22px;line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+/* Coluna única, com o fundo rosado do site */
+.stage{background:linear-gradient(180deg,#fff 0%,var(--brand-soft) 100%)}
+.wrap{max-width:640px;margin:0 auto;padding:28px 16px 48px}
+.intro{text-align:center}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.intro h1{font-size:26px;line-height:1.2;margin:6px 0 6px;letter-spacing:-.01em}
 .intro h1 em{font-style:normal;color:var(--brand)}
 .intro p{margin:0;color:var(--text-2);font-size:14px}
 
 /* Progresso */
-.progress{margin:16px 0 12px}
+.progress{margin:20px 0 6px}
 .progress .p-txt{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px}
 .progress .p-txt b{color:var(--brand);font-weight:700}
 .progress .p-bar{height:6px;border-radius:999px;background:#e6e6e8;overflow:hidden}
 .progress .p-bar i{display:block;height:100%;width:0;background:var(--brand);border-radius:999px;transition:width .35s ease}
+.nav{display:flex;justify-content:space-between;align-items:center;min-height:36px;margin-bottom:6px}
 
 /* Card da etapa */
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.04)}
+.card{background:var(--card);border:1px solid #f3c6cf;border-radius:16px;box-shadow:0 10px 30px rgba(226,36,70,.06)}
 .step{padding:22px;display:none;animation:fade .3s ease}
 .step.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -104,7 +108,7 @@ header.site{background:#fff;border-bottom:1px solid var(--border)}
 .notice.brand{background:var(--brand-soft);color:var(--brand-deep)}
 
 /* Ações */
-.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
+.actions{display:flex;justify-content:flex-end;margin-top:20px}
 .btn{border:0;border-radius:10px;padding:12px 20px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .15s}
 .btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px var(--brand-shadow)}
 .btn-primary:hover{background:var(--brand-dark)}
@@ -117,11 +121,18 @@ header.site{background:#fff;border-bottom:1px solid var(--border)}
 
 /* Resumo */
 .incl-list{list-style:none;margin:0;padding:0;border:1px solid var(--border);border-radius:12px}
-.incl-list li{display:flex;gap:10px;align-items:baseline;padding:9px 12px;border-bottom:1px solid var(--border);font-size:14px}
+.incl-list li{display:flex;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--border);font-size:14px}
 .incl-list li:last-child{border-bottom:0}
 .incl-list li::before{content:"✓";color:var(--success);font-weight:800}
-.incl-list li b{white-space:nowrap}
-.incl-list li span{color:var(--muted);font-size:12.5px;margin-left:auto;text-align:right}
+.incl-list .nm{flex:1;min-width:0}
+.incl-list .nm b{display:block}
+.incl-list .nm small{display:block;color:var(--muted);font-size:12px}
+.incl-list .vl{text-align:right;font-weight:700;white-space:nowrap}
+.incl-list .vl small{display:block;font-weight:500;color:var(--muted);font-size:11px}
+.incl-list .vl.incl{color:var(--success)}
+.lista-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 8px}
+.lista-head .section-t{margin:0}
+.lista-head span{font-size:12px;color:var(--muted)}
 .always{font-size:12.5px;color:var(--muted);margin:8px 0 0}
 .section-t{font-weight:700;font-size:15px;margin:22px 0 10px}
 .billing{display:flex;flex-direction:column;gap:10px}
@@ -144,8 +155,6 @@ header.site{background:#fff;border-bottom:1px solid var(--border)}
 .detalhe{margin-top:12px;font-size:13px;color:var(--text-2)}
 .detalhe summary{cursor:pointer;font-weight:700;color:var(--text-2);padding:6px 0}
 .detalhe ul{margin:6px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
-.detalhe .row{display:flex;justify-content:space-between;gap:10px}
-.detalhe .row span{color:var(--muted)}
 .wa-box{margin-top:18px}
 .wa-note{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
 
@@ -154,7 +163,10 @@ header.site{background:#fff;border-bottom:1px solid var(--border)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .toast::before{content:"✓";color:#5fd38d;margin-right:8px;font-weight:800}
 
-footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 28px}
+.band{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;text-align:center;padding:30px 16px}
+.band h3{margin:0 0 6px;font-size:20px;line-height:1.25}
+.band p{margin:0;font-size:13px;opacity:.9}
+footer.site{text-align:center;font-size:12px;color:var(--muted);padding:16px}
 
 @media (max-width:480px){
   .step{padding:18px 16px}
@@ -180,15 +192,21 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
   </div>
 </header>
 
+<div class="stage">
 <main class="wrap">
   <div class="intro">
-    <h1>Monte o <em>seu plano</em> Revenda Mais</h1>
+    <div class="eyebrow">Sistema para lojas de veículos</div>
+    <h1><em>Monte seu plano</em> Revenda Mais</h1>
     <p>Responda sim ou não. No final, você vê quanto fica.</p>
   </div>
 
   <div class="progress" id="montador">
     <div class="p-txt"><span id="pTxt">Passo 1</span><b id="pLbl">Gestão</b></div>
     <div class="p-bar"><i id="pBar"></i></div>
+  </div>
+  <div class="nav">
+    <button class="link" id="navBack">← Voltar</button>
+    <button class="link" id="navRestart">Recomeçar</button>
   </div>
 
   <section class="card" aria-live="polite">
@@ -201,12 +219,11 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
         <button class="choice" data-value="sim"><b>Sim, quero</b></button>
         <button class="choice" data-value="nao"><b>Não, obrigado</b></button>
       </div>
-      <div class="notice info hidden" id="semGestaoNotice">Sem gestão, você ainda pode ter Assinatura Eletrônica e CRM. Financeiro e notas fiscais são só para quem tem o sistema.</div>
       <div class="inclui">
         <div class="i-t">O que está incluso</div>
         <ul class="chips"><li>Clientes</li><li>Compras e vendas</li><li>Avaliação de veículos</li><li>Contratos</li><li>Estoque</li><li>Anúncios nos portais</li></ul>
       </div>
-      <div class="actions"><span></span><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
+      <div class="actions"><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 2) FINANCEIRO + 2.1) ESTOQUE -->
@@ -219,21 +236,25 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
       </div>
       <div class="notice info hidden" id="finNaoNotice">O financeiro está disponível a partir do <span class="fin-plan-label">Plano 1.0</span> (26 a 50 veículos).</div>
 
-      <div class="reveal hidden" id="tiersReveal">
-        <p class="sub-q">Quantos veículos você tem em estoque?</p>
-        <p class="hint">O valor acompanha o tamanho do estoque: quem tem 20 carros não paga o mesmo que quem tem 200.</p>
-        <div class="choices" id="tiers"></div>
-        <div class="field hidden" id="veicField">
-          <label for="veicInput">Quantos veículos, exatamente?</label>
-          <input id="veicInput" type="number" inputmode="numeric" min="151" step="1" placeholder="Ex.: 220">
-        </div>
-      </div>
-
       <div class="inclui">
         <div class="i-t">O que está incluso</div>
         <ul class="chips"><li>Contas a pagar e receber</li><li>Saldo dos bancos</li><li>Fluxo de caixa</li><li>DRE</li><li>Despesas por categoria</li></ul>
       </div>
-      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
+      <div class="actions"><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
+    </div>
+
+    <!-- 2.1) ESTOQUE -->
+    <div class="step" data-step="estoque">
+      <div class="kicker">Tamanho do estoque</div>
+      <h2>Quantos veículos você tem em estoque?</h2>
+      <div class="choices" id="tiers"></div>
+      <div class="field hidden" id="veicField">
+        <label for="veicInput">Quantos veículos, exatamente?</label>
+        <input id="veicInput" type="number" inputmode="numeric" min="151" step="1" placeholder="Ex.: 220">
+      </div>
+      <div class="notice info hidden" id="finTierNotice">Os planos sem financeiro ficam bloqueados porque você escolheu o controle financeiro.</div>
+      <p class="hint" style="margin:14px 0 0">O valor acompanha o tamanho do estoque: quem tem 20 carros não paga o mesmo que quem tem 200.</p>
+      <div class="actions"><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 3) ASSINATURA ELETRÔNICA -->
@@ -248,7 +269,7 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
         <div class="i-t">O que está incluso</div>
         <ul class="chips"><li>Tecnologia Clicksign</li><li>Validade jurídica</li><li>Cliente assina sem ir à loja</li><li>Envio por WhatsApp ou e-mail</li></ul>
       </div>
-      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
+      <div class="actions"><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 4) CRM + 4.1) USUÁRIOS + 4.2) AGENTE DE IA + 4.3) LEADS -->
@@ -286,7 +307,7 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
         <div class="i-t">O que está incluso</div>
         <ul class="chips"><li>WhatsApp oficial</li><li>Leads dos portais</li><li>Funil em Kanban</li><li>Indicadores</li></ul>
       </div>
-      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
+      <div class="actions"><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 5) NF-e DE PRODUTO + 5.1) RENAVE -->
@@ -312,7 +333,7 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
         <div class="i-t">O que está incluso</div>
         <ul class="chips"><li>Impostos calculados</li><li>Envio à SEFAZ</li><li>XML e DANFE guardados</li><li>Carta de correção</li></ul>
       </div>
-      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
+      <div class="actions"><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 6) NFS-e DE SERVIÇO -->
@@ -327,13 +348,14 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
         <div class="i-t">O que está incluso</div>
         <ul class="chips"><li>Integrada com a prefeitura</li><li>Emissão direto do sistema</li></ul>
       </div>
-      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Ver meu plano →</button></div>
+      <div class="actions"><button class="btn btn-primary" data-next disabled>Ver meu plano →</button></div>
     </div>
 
     <!-- RESUMO — único lugar onde aparecem valores -->
     <div class="step" data-step="resumo">
       <div class="kicker">Seu plano</div>
       <h2>Pronto! Este é o seu plano.</h2>
+      <div class="lista-head"><p class="section-t">O que está no seu plano</p><span id="listaLbl">valores no mensal</span></div>
       <ul class="incl-list" id="inclList"></ul>
       <p class="always">Sempre incluso: suporte em menos de 2 min, backup diário e servidores AWS.</p>
 
@@ -343,10 +365,6 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
       <details class="detalhe">
         <summary>Como funciona a cobrança</summary>
         <ul id="cobranca"></ul>
-      </details>
-      <details class="detalhe">
-        <summary>Valor de cada item</summary>
-        <ul id="summaryList"></ul>
       </details>
 
       <div class="field">
@@ -361,12 +379,15 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 2
         </button>
         <div class="wa-note">Abre o WhatsApp do seu consultor com o plano já preenchido.</div>
       </div>
-
-      <div class="actions"><button class="link" data-back>← Voltar e ajustar</button><button class="link" onclick="restart()">Recomeçar</button></div>
     </div>
   </section>
 </main>
+</div>
 
+<section class="band">
+  <h3>Mais de 5.000 lojas já escolheram o Revenda Mais.</h3>
+  <p>Suporte em menos de 2 minutos · Backup em 3 lugares · Servidores Amazon AWS</p>
+</section>
 <footer class="site">Revenda Mais · Uma empresa Webmotors</footer>
 
 <div class="toast" id="toast"></div>
@@ -417,6 +438,7 @@ const plural = (n, um, varios) => `${n} ${n === 1 ? um : varios}`;
 const STEPS = [
   { id: 'gestao',     label: 'Gestão' },
   { id: 'financeiro', label: 'Financeiro', soGestao: true },
+  { id: 'estoque',    label: 'Estoque', soGestao: true },
   { id: 'assinatura', label: 'Assinatura' },
   { id: 'crm',        label: 'CRM' },
   { id: 'nf',         label: 'NF-e', soGestao: true },
@@ -468,7 +490,7 @@ function itens() {
     const fv = franquiasVeiculos();
     if (fv) I.push({ nome: 'Veículos adicionais', sub: `${plural(fv, 'franquia', 'franquias')} de ${CONFIG.veiculosAdicionais.franquia}`,
       pag: 'cartao', mensal: fv * CONFIG.veiculosAdicionais.mensal, anualMes: fv * CONFIG.veiculosAdicionais.anual });
-    if (p.financeiro) I.push({ nome: 'Controle financeiro', sub: 'incluso', pag: 'incl' });
+    if (p.financeiro) I.push({ nome: 'Controle financeiro', sub: 'já vem no seu plano', pag: 'incl' });
   }
   if (state.assinatura === 'sim') I.push({ nome: 'Assinatura Eletrônica', sub: 'Clicksign', pag: 'cartao', mensal: CONFIG.assinatura.mensal, anualMes: CONFIG.assinatura.anual });
   if (state.crm === 'sim') {
@@ -544,7 +566,7 @@ function billCard(tipo, T) {
   if (T.boleto) rows += `<div><span>No boleto (pós-pago)</span><b>${brl(T.boleto)}/mês</b></div>`;
   let extra = '';
   if (anual && T.economiaAno > 0) extra = `<span class="save">Economia de ${brl(T.economiaAno)} por ano</span>`;
-  if (!anual && T.cartao > 0) extra = `<div class="platinum">⭐ Performou <b>Platinum</b>? Sistema pela metade: total de <b>${brl(T.cartao * (1 - CONFIG.descontoPlatinum) + T.boleto)}/mês</b></div>`;
+  if (!anual && T.cartao > 0) extra = `<div class="platinum">Performou <b>Platinum</b>? Sistema pela metade: total de <b>${brl(T.cartao * (1 - CONFIG.descontoPlatinum) + T.boleto)}/mês</b></div>`;
   return `<button class="bill ${state.billing === tipo ? 'selected' : ''}" data-billing="${tipo}">
     <div class="b-top"><span class="b-name">${anual ? 'Anual' : 'Mensal'}${anual ? '<span class="b-badge">mais barato</span>' : ''}</span>
       <span class="b-price">${brl(total)} <small>/mês</small></span></div>
@@ -553,7 +575,13 @@ function billCard(tipo, T) {
 }
 function renderResumo() {
   const T = totais();
-  $('#inclList').innerHTML = T.I.map(i => `<li><b>${i.nome}</b><span>${i.sub}</span></li>`).join('');
+  const anual = state.billing === 'anual';
+  $('#listaLbl').textContent = anual ? 'valores no anual' : 'valores no mensal';
+  $('#inclList').innerHTML = T.I.map(i => {
+    const vl = i.pag === 'incl' ? '<span class="vl incl">Incluso</span>'
+      : `<span class="vl">${brl(anual ? i.anualMes : i.mensal)}<small>por mês · ${i.pag === 'boleto' ? 'boleto' : 'cartão'}</small></span>`;
+    return `<li><span class="nm"><b>${i.nome}</b><small>${i.sub}</small></span>${vl}</li>`;
+  }).join('');
 
   // Sem nada no cartão não existe anual: mostra só o mensal
   const soMensal = !T.cartao;
@@ -577,9 +605,6 @@ function renderResumo() {
   if (T.cartao) notas.push('<b>Platinum:</b> 50% de desconto no sistema (cartão) para lojas que performam Platinum.');
   $('#cobranca').innerHTML = notas.map(n => `<li>${n}</li>`).join('');
 
-  const anual = state.billing === 'anual';
-  $('#summaryList').innerHTML = T.I.map(i => `<li><div class="row"><b>${i.nome}</b>${i.pag === 'incl' ? '<span>incluso</span>' : `<span>${brl(anual ? i.anualMes : i.mensal)}/mês · ${i.pag === 'boleto' ? 'boleto' : 'cartão'}</span>`}</div></li>`).join('');
-
   $('#waBtn').disabled = !state.billing;
   $('#waLabel').textContent = state.billing ? `Enviar para ${CONSULTOR}` : 'Escolha mensal ou anual';
 }
@@ -589,9 +614,10 @@ function anterior(i) { let n = i - 1; while (n > 0 && pula(n)) n--; return n; }
 function canNext(id) {
   const ok = {
     gestao: () => !!state.gestao,
-    financeiro: () => {
+    financeiro: () => !!state.financeiro,
+    estoque: () => {
       const p = planoSel();
-      return !!state.financeiro && !!p && !(state.financeiro === 'sim' && !p.financeiro) && (p.ate !== null || (state.veiculos || 0) > 150);
+      return !!p && !(state.financeiro === 'sim' && !p.financeiro) && (p.ate !== null || (state.veiculos || 0) > 150);
     },
     assinatura: () => !!state.assinatura,
     crm: () => !!state.crm && (state.crm === 'nao' || (!!state.ia && (state.ia === 'nao' || state.leads > 0))),
@@ -611,16 +637,16 @@ function update() {
     c.querySelectorAll('.choice').forEach(b => b.classList.toggle('selected', state[f] === b.dataset.value));
   });
   const p = planoSel();
-  $('#semGestaoNotice').classList.toggle('hidden', state.gestao !== 'nao');
   $('#finNaoNotice').classList.toggle('hidden', state.financeiro !== 'nao');
-  $('#tiersReveal').classList.toggle('hidden', !state.financeiro);
+  $('#finTierNotice').classList.toggle('hidden', state.financeiro !== 'sim');
   $('#veicField').classList.toggle('hidden', !(p && p.ate === null));
   $('#crmReveal').classList.toggle('hidden', state.crm !== 'sim');
   $('#leadsField').classList.toggle('hidden', state.ia !== 'sim');
   $('#nfReveal').classList.toggle('hidden', state.nf !== 'sim');
   $('#nadaNotice').classList.toggle('hidden', !(state.crm === 'nao' && !algumProduto()));
-  if (state.financeiro) renderTiers();
+  if (id === 'estoque') renderTiers();
   renderUsers();
+  $('.nav').classList.toggle('hidden', state.step === 0);
   const nextBtn = $(`.step[data-step="${id}"] [data-next]`);
   if (nextBtn) nextBtn.disabled = !canNext(id);
   if (id === 'resumo') renderResumo();
@@ -654,9 +680,8 @@ $('#leadsInput').addEventListener('input', e => { state.leads = lerInteiro(e.tar
 $$('[data-next]').forEach(b => b.addEventListener('click', () => {
   if (state.step < STEPS.length - 1) { state.step = proximo(state.step); update(); scrollToTop(); }
 }));
-$$('[data-back]').forEach(b => b.addEventListener('click', () => {
-  if (state.step > 0) { state.step = anterior(state.step); update(); scrollToTop(); }
-}));
+$('#navBack').onclick = () => { if (state.step > 0) { state.step = anterior(state.step); update(); scrollToTop(); } };
+$('#navRestart').onclick = () => restart();
 $('#usrMinus').onclick = () => { state.usuarios = Math.max(CONFIG.crm.minUsuarios, state.usuarios - 1); update(); };
 $('#usrPlus').onclick = () => { state.usuarios = Math.min(CONFIG.crm.maxUsuarios, state.usuarios + 1); update(); };
 
@@ -684,8 +709,8 @@ function buildMessage() {
   const nao = naoIncluidos();
   if (nao.length) msg += `\n\nNão incluí: ${nao.join(', ')}.`;
   msg += `\n\n*Formato escolhido: ${anual ? 'ANUAL' : 'MENSAL'}*\n`;
-  if (T.cartao) msg += `💳 Cartão de crédito (${T.nomesCartao.join(' + ')}): ${anual ? `12x de ${brl(cartaoMes)}` : `${brl(cartaoMes)}/mês`}\n`;
-  if (T.boleto) msg += `🧾 Boleto pós-pago (${T.nomesBoleto.join(' + ')}): ${brl(T.boleto)}/mês\n`;
+  if (T.cartao) msg += `Cartão de crédito (${T.nomesCartao.join(' + ')}): ${anual ? `12x de ${brl(cartaoMes)}` : `${brl(cartaoMes)}/mês`}\n`;
+  if (T.boleto) msg += `Boleto pós-pago (${T.nomesBoleto.join(' + ')}): ${brl(T.boleto)}/mês\n`;
   msg += `*Mensalidade total: ${brl(cartaoMes + T.boleto)}/mês*`;
   if (anual && T.economiaAno > 0) msg += `\n(economia de ${brl(T.economiaAno)} por ano no anual)`;
   if (state.assinatura === 'sim') msg += `\n+ ${brl(CONFIG.assinatura.porDocumento)} por documento assinado, cobrado no mês seguinte.`;
