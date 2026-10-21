@@ -4,322 +4,167 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Monte seu plano | Revenda Mais</title>
-<meta name="description" content="Atualize seu plano Revenda Mais: escolha os módulos ideais para a sua loja e veja o valor na hora.">
+<meta name="description" content="Monte ou atualize seu plano Revenda Mais: escolha os módulos ideais para a sua loja e veja o valor no final.">
 <link rel="icon" href="https://revendamais.com.br/wp-content/uploads/2026/01/cropped-V1V_Favicon-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* =========================================================
-   Identidade visual Revenda Mais (cores do site oficial)
-   ========================================================= */
+/* Identidade visual Revenda Mais (cores do site oficial) */
 :root{
   --brand:#E22446;
   --brand-dark:#B8143A;
   --brand-deep:#8F0E2E;
-  --brand-shadow:rgba(226,36,70,.28);
+  --brand-shadow:rgba(226,36,70,.25);
   --brand-soft:#FEF5F6;
-  --brand-soft-2:#FFE6E6;
-  --bg:#ffffff;
-  --bg-light:#fcfcfc;
+  --bg:#f6f6f7;
+  --card:#ffffff;
   --border:#ececec;
-  --border-strong:#e0e0e0;
-  --text:#212121;
-  --text-2:#444;
-  --muted:#777;
+  --border-strong:#dedede;
+  --text:#1f1f1f;
+  --text-2:#4a4a4a;
+  --muted:#7a7a7a;
   --success:#1f9d55;
   --success-soft:#e8f6ee;
-  --warn:#b26a00;
   --warn-soft:#fff6e5;
-  --radius:14px;
-  --shadow:0 10px 30px rgba(17,17,17,.06);
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{
-  font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  color:var(--text);background:var(--bg);line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%;display:block}
-button{font-family:inherit;cursor:pointer}
-a{color:inherit}
-
-/* ---------- Top bar + header ---------- */
-.topbar{background:#111;color:#fff;font-size:13px;text-align:center;padding:8px 16px}
-.topbar b{background:var(--brand);padding:2px 10px;border-radius:999px;font-size:11px;letter-spacing:.04em;margin-right:8px;text-transform:uppercase}
-header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:50}
-.header-in{max-width:1180px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{height:34px;width:auto}
-.logo-fallback{font-weight:800;font-size:24px;letter-spacing:-.02em;display:none}
-.logo-fallback span{color:var(--brand)}
-.consultor-chip{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)}
-.consultor-chip .av{width:34px;height:34px;border-radius:50%;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:700}
-.consultor-chip small{display:block;color:var(--muted);font-size:11px;line-height:1.1}
-
-/* ---------- Hero ---------- */
-.hero{background:linear-gradient(180deg,#fff 0%,var(--brand-soft) 100%);border-bottom:1px solid var(--border)}
-.hero-in{max-width:1180px;margin:0 auto;padding:44px 16px 36px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
-.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.hero h1{font-size:clamp(28px,4vw,42px);line-height:1.12;margin:10px 0 14px;letter-spacing:-.02em}
-.hero h1 em{font-style:normal;color:var(--brand)}
-.hero p{color:var(--text-2);font-size:16px;margin:0 0 22px;max-width:560px}
-.hero-img{border-radius:18px;overflow:hidden}
-.hero-points{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:13px;color:var(--text-2)}
-.hero-points span::before{content:"✓";color:var(--success);font-weight:800;margin-right:6px}
-
-.btn{border:0;border-radius:10px;padding:13px 22px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,box-shadow .15s,background .15s;text-decoration:none}
-.btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 20px var(--brand-shadow)}
-.btn-primary:hover{background:var(--brand-dark);transform:translateY(-1px)}
-.btn-primary:disabled{background:#e9a3b1;box-shadow:none;cursor:not-allowed;transform:none}
-.btn-ghost{background:#fff;color:var(--text);border:1px solid var(--border-strong)}
-.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
-.btn-wa{background:#1fa855;color:#fff;box-shadow:0 8px 20px rgba(31,168,85,.28);font-size:16px;padding:15px 24px;width:100%}
-.btn-wa:hover{background:#178c46}
-.btn-wa:disabled{background:#9fd3b4;box-shadow:none;cursor:not-allowed}
-
-/* ---------- Progress ---------- */
-.progress-wrap{max-width:1180px;margin:0 auto;padding:26px 16px 0}
-.progress{display:flex;gap:6px;list-style:none;margin:0;padding:0}
-.progress li{flex:1;min-width:0}
-.progress .bar{height:6px;border-radius:999px;background:#eee;overflow:hidden}
-.progress .bar i{display:block;height:100%;width:0;background:var(--brand);transition:width .4s ease}
-.progress li.done .bar i,.progress li.current .bar i{width:100%}
-.progress li.current .bar i{background:linear-gradient(90deg,var(--brand),#ff6b86)}
-.progress .lbl{font-size:12px;color:var(--muted);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.progress li.current .lbl{color:var(--brand);font-weight:700}
-.progress li.done .lbl{color:var(--text-2)}
-
-/* ---------- Layout principal ---------- */
-.main{max-width:1180px;margin:0 auto;padding:22px 16px 120px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:28px;align-items:start}
-.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
-.step{padding:30px;display:none;animation:fade .35s ease}
-.step.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.step-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
-.step-icon{width:56px;height:56px;flex:0 0 56px;border-radius:14px;background:var(--brand-soft);display:grid;place-items:center;overflow:hidden}
-.step-icon img{width:40px;height:40px;object-fit:contain}
-.step-icon svg{width:28px;height:28px;color:var(--brand)}
-.step-kicker{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
-.step h2{font-size:clamp(21px,2.6vw,27px);line-height:1.2;margin:4px 0 6px;letter-spacing:-.01em}
-.step .lead{color:var(--text-2);margin:0}
-
-.benefits{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:20px 0 24px;padding:18px 20px;background:var(--bg-light);border:1px solid var(--border);border-radius:12px;list-style:none}
-.benefits li{font-size:14px;color:var(--text-2);display:flex;gap:9px;align-items:flex-start}
-.benefits li::before{content:"";flex:0 0 18px;height:18px;margin-top:2px;border-radius:5px;background:var(--success) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
-
-.q{font-weight:700;font-size:17px;margin:4px 0 12px}
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.choice{position:relative;text-align:left;background:#fff;border:1.5px solid var(--border-strong);border-radius:12px;padding:16px 16px 16px 48px;font-size:15px;color:var(--text);transition:border-color .15s,background .15s,box-shadow .15s}
-.choice::before{content:"";position:absolute;left:16px;top:17px;width:20px;height:20px;border-radius:50%;border:2px solid #cfcfcf;background:#fff;transition:all .15s}
-.choice b{display:block;font-size:15px}
-.choice small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-.choice:hover{border-color:var(--brand)}
-.choice.selected{border-color:var(--brand);background:var(--brand-soft);box-shadow:0 0 0 3px rgba(226,36,70,.08)}
-.choice.selected::before{border-color:var(--brand);background:radial-gradient(circle,var(--brand) 0 5px,#fff 6px)}
-
-.notice{display:flex;gap:12px;align-items:flex-start;border-radius:12px;padding:14px 16px;font-size:14px;margin-top:16px}
-.notice svg{flex:0 0 20px;width:20px;height:20px;margin-top:1px}
-.notice.info{background:var(--warn-soft);color:#6b4300;border:1px solid #f5dcae}
-.notice.ok{background:var(--success-soft);color:#155d35;border:1px solid #bfe5cf}
-.notice.brand{background:var(--brand-soft);color:var(--brand-deep);border:1px solid #f7cdd6}
+body{font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.45;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;color:inherit}
 .hidden{display:none!important}
 
-.reveal{margin-top:24px;padding-top:22px;border-top:1px dashed var(--border-strong);animation:fade .35s ease}
+/* Header */
+header.site{background:#fff;border-bottom:1px solid var(--border)}
+.header-in{max-width:640px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{height:28px;width:auto;display:block}
+.logo-fallback{font-weight:800;font-size:22px;letter-spacing:-.02em;display:none}
+.logo-fallback span{color:var(--brand)}
+.consultor{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);text-align:right;line-height:1.2}
+.consultor b{display:block;color:var(--text);font-size:13px}
+.consultor .av{width:30px;height:30px;border-radius:50%;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:700;font-size:12px}
 
-/* tiers de veículos */
-.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:12px}
-.tier{position:relative;background:#fff;border:1.5px solid var(--border-strong);border-radius:12px;padding:18px 14px 14px;text-align:left;transition:all .15s;display:flex;flex-direction:column;gap:4px;min-height:140px}
-.tier:hover:not(:disabled){border-color:var(--brand)}
-.tier.selected{border-color:var(--brand);background:var(--brand-soft);box-shadow:0 0 0 3px rgba(226,36,70,.08)}
-.tier:disabled{opacity:.5;cursor:not-allowed;background:#fafafa}
-.tier .t-top{font-size:12px;color:var(--muted)}
-.tier .t-veh{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
-.tier .t-veh small{font-size:13px;font-weight:600;color:var(--muted)}
-.tier .t-price{font-weight:700;color:var(--brand);margin-top:auto}
-.tier .t-price small{color:var(--muted);font-weight:500}
-.tier .t-tag{font-size:11px;font-weight:700;border-radius:999px;padding:3px 8px;align-self:flex-start;margin-top:4px}
-.t-tag.fin{background:var(--success-soft);color:#155d35}
-.t-tag.nofin{background:#f1f1f1;color:#888}
-.tier .ribbon{position:absolute;top:-10px;right:10px;background:var(--brand);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:.03em}
+/* Coluna única */
+.wrap{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+.intro h1{font-size:22px;line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+.intro h1 em{font-style:normal;color:var(--brand)}
+.intro p{margin:0;color:var(--text-2);font-size:14px}
 
-/* stepper usuários */
-.stepper-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
-.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--border-strong);border-radius:12px;overflow:hidden}
-.stepper button{width:48px;height:48px;border:0;background:#fff;font-size:22px;color:var(--brand);font-weight:700}
-.stepper button:hover{background:var(--brand-soft)}
-.stepper button:disabled{color:#ccc;background:#fff;cursor:not-allowed}
-.stepper output{min-width:64px;text-align:center;font-size:22px;font-weight:800}
-.users-info{font-size:14px;color:var(--text-2)}
-.users-info b{color:var(--text)}
+/* Progresso */
+.progress{margin:16px 0 12px}
+.progress .p-txt{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px}
+.progress .p-txt b{color:var(--brand);font-weight:700}
+.progress .p-bar{height:6px;border-radius:999px;background:#e6e6e8;overflow:hidden}
+.progress .p-bar i{display:block;height:100%;width:0;background:var(--brand);border-radius:999px;transition:width .35s ease}
 
-.progress li.skipped .lbl{text-decoration:line-through;color:#bbb}
-.progress li.skipped .bar i{width:100%;background:#ddd}
+/* Card da etapa */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.04)}
+.step{padding:22px;display:none;animation:fade .3s ease}
+.step.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.kicker{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.step h2{font-size:19px;line-height:1.25;margin:4px 0 14px;letter-spacing:-.01em}
+.sub-q{font-weight:700;font-size:15px;margin:0 0 10px}
+.hint{font-size:12.5px;color:var(--muted);margin:-4px 0 10px}
 
-.step-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
-.link-back{background:none;border:0;color:var(--muted);font-size:14px;font-weight:600;padding:8px 0}
-.link-back:hover{color:var(--brand)}
+/* Opções (sempre na vertical) */
+.choices{display:flex;flex-direction:column;gap:8px}
+.choice{position:relative;width:100%;text-align:left;background:#fff;border:1.5px solid var(--border-strong);border-radius:12px;padding:12px 14px 12px 44px;font-size:15px;transition:border-color .15s,background .15s}
+.choice::before{content:"";position:absolute;left:14px;top:50%;margin-top:-10px;width:20px;height:20px;border-radius:50%;border:2px solid #cfcfcf;background:#fff;transition:all .15s}
+.choice b{display:block;font-weight:700}
+.choice small{display:block;color:var(--muted);font-size:12.5px;margin-top:1px}
+.choice .tag{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:700;border-radius:999px;padding:3px 8px}
+.tag.fin{background:var(--success-soft);color:#155d35}
+.tag.nofin{background:#f1f1f1;color:#888}
+.choice:hover:not(:disabled){border-color:var(--brand)}
+.choice.selected{border-color:var(--brand);background:var(--brand-soft)}
+.choice.selected::before{border-color:var(--brand);background:radial-gradient(circle,var(--brand) 0 5px,#fff 6px)}
+.choice:disabled{opacity:.45;cursor:not-allowed}
 
-/* ---------- Resultado ---------- */
-.summary-list{list-style:none;margin:18px 0 0;padding:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.summary-list li{display:flex;justify-content:space-between;gap:14px;padding:13px 16px;font-size:14px;border-bottom:1px solid var(--border)}
-.summary-list li:last-child{border-bottom:0}
-.summary-list .nm b{display:block;font-size:15px}
-.summary-list .nm small{color:var(--muted)}
-.summary-list .vl{font-weight:700;white-space:nowrap}
-.summary-list .vl.incl{color:var(--success)}
-.summary-list .vl.off{color:var(--muted);font-weight:500}
-
-.billing{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
-.bill{position:relative;text-align:left;border:1.5px solid var(--border-strong);border-radius:14px;padding:20px;background:#fff;transition:all .15s;display:flex;flex-direction:column;gap:6px}
-.bill:hover{border-color:var(--brand)}
-.bill.selected{border-color:var(--brand);box-shadow:0 0 0 3px rgba(226,36,70,.1)}
-.bill .b-name{font-weight:800;font-size:16px;display:flex;align-items:center;gap:10px}
-.bill .b-name::before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid #cfcfcf;flex:0 0 18px}
-.bill.selected .b-name::before{border-color:var(--brand);background:radial-gradient(circle,var(--brand) 0 4px,#fff 5px)}
-.bill .b-price{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:6px}
-.bill .b-price small{font-size:14px;color:var(--muted);font-weight:600}
-.bill .b-sub{font-size:13px;color:var(--text-2)}
-.bill .b-badge{position:absolute;top:-11px;right:14px;background:var(--brand);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px}
-.platinum{margin-top:10px;border-radius:12px;padding:12px 14px;background:linear-gradient(135deg,#23262d,#3d424d);color:#fff;font-size:13px}
-.platinum .pl-top{display:flex;align-items:center;gap:8px;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#e7e9ee}
-.platinum .pl-top i{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#f4f6fa,#a9b0bd);display:inline-block}
-.platinum .pl-val{font-size:20px;font-weight:800;margin-top:4px}
-.platinum .pl-val s{font-size:13px;font-weight:500;color:#b8bec9;margin-left:6px}
-.platinum p{margin:2px 0 0;color:#d5d9e0;font-size:12px}
-.save{display:inline-block;background:var(--success-soft);color:#155d35;font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px;align-self:flex-start;margin-top:4px}
-
-.field{margin-top:22px}
-.field label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
-.field input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--border-strong);border-radius:10px;outline:none}
+/* Sub-perguntas que aparecem após o "sim" */
+.reveal{margin-top:18px;padding-top:16px;border-top:1px dashed var(--border-strong);animation:fade .3s ease}
+.field label{display:block;font-weight:700;font-size:14px;margin:12px 0 6px}
+.field input{width:100%;font:inherit;font-size:16px;padding:11px 13px;border:1.5px solid var(--border-strong);border-radius:10px;outline:none}
 .field input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(226,36,70,.1)}
-.wa-box{margin-top:22px}
-.wa-note{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--border-strong);border-radius:12px;overflow:hidden}
+.stepper button{width:44px;height:44px;border:0;background:#fff;font-size:22px;color:var(--brand);font-weight:700}
+.stepper button:disabled{color:#ccc;cursor:not-allowed}
+.stepper output{min-width:56px;text-align:center;font-size:20px;font-weight:800}
 
-/* ---------- Painel lateral ---------- */
-.side{position:sticky;top:84px;display:flex;flex-direction:column;gap:16px}
-.plan-box{padding:20px}
-.plan-box h3{margin:0 0 4px;font-size:16px}
-.plan-box .pb-sub{font-size:13px;color:var(--muted);margin:0 0 14px}
-.pb-lines{list-style:none;margin:0;padding:0;font-size:14px}
-.pb-lines li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border)}
-.pb-lines li:last-child{border-bottom:0}
-.pb-lines li.empty{color:var(--muted);justify-content:center;border:0;padding:14px 0;text-align:center}
-.pb-lines .pv{font-weight:700;white-space:nowrap}
-.pb-lines .pv.incl{color:var(--success)}
-.pb-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:12px;border-top:2px solid var(--text)}
-.pb-total span{font-weight:700}
-.pb-total b{font-size:24px;letter-spacing:-.02em;color:var(--brand)}
-.pb-total b small{font-size:13px;color:var(--muted);font-weight:600}
-.pb-foot{font-size:12px;color:var(--muted);margin-top:6px}
+/* O que está incluso (sempre embaixo) */
+.inclui{margin-top:18px}
+.inclui .i-t{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.chips li{font-size:12.5px;color:var(--text-2);background:#f4f4f5;border-radius:999px;padding:5px 10px}
+.chips li::before{content:"✓";color:var(--success);font-weight:800;margin-right:5px}
 
-.value-box{padding:20px;background:linear-gradient(160deg,#fff 0%,var(--brand-soft) 100%)}
-.value-box .vb-kicker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--brand)}
-.value-box h4{margin:4px 0 12px;font-size:17px;line-height:1.25}
-.value-box ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-.value-box li{display:flex;gap:12px;font-size:13.5px;color:var(--text-2)}
-.value-box li .ic{flex:0 0 34px;height:34px;border-radius:10px;background:#fff;border:1px solid #f4d3da;display:grid;place-items:center}
-.value-box li .ic svg{width:18px;height:18px;color:var(--brand)}
-.value-box li b{display:block;color:var(--text);font-size:14px}
-.quote{margin-top:14px;padding:14px;border-radius:12px;background:#fff;border:1px solid var(--border);font-size:13px;color:var(--text-2)}
-.quote .stars{color:#f5b301;letter-spacing:2px;font-size:13px}
-.quote cite{display:block;margin-top:6px;font-style:normal;font-weight:700;color:var(--text);font-size:12px}
+/* Avisos */
+.notice{border-radius:10px;padding:10px 12px;font-size:13px;margin-top:12px}
+.notice.info{background:var(--warn-soft);color:#6b4300}
+.notice.brand{background:var(--brand-soft);color:var(--brand-deep)}
 
-.google{display:flex;align-items:center;gap:12px;padding:14px 18px}
-.google .g-score{font-weight:800;font-size:13px;letter-spacing:.04em}
-.google .stars{color:#f5b301;letter-spacing:2px}
-.google small{color:var(--muted);font-size:12px;display:block}
+/* Ações */
+.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
+.btn{border:0;border-radius:10px;padding:12px 20px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .15s}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px var(--brand-shadow)}
+.btn-primary:hover{background:var(--brand-dark)}
+.btn-primary:disabled{background:#eaa7b4;box-shadow:none;cursor:not-allowed}
+.btn-wa{background:#1fa855;color:#fff;width:100%;padding:14px 20px;font-size:15px;box-shadow:0 6px 16px rgba(31,168,85,.25)}
+.btn-wa:hover{background:#178c46}
+.btn-wa:disabled{background:#a6d6b9;box-shadow:none;cursor:not-allowed}
+.link{background:none;border:0;color:var(--muted);font-size:14px;font-weight:600;padding:8px 0}
+.link:hover{color:var(--brand)}
 
-/* Toast agregador de valor */
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#111;color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:0 14px 30px rgba(0,0,0,.25);transition:all .35s ease;z-index:100;display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+/* Resumo */
+.incl-list{list-style:none;margin:0;padding:0;border:1px solid var(--border);border-radius:12px}
+.incl-list li{display:flex;gap:10px;align-items:baseline;padding:9px 12px;border-bottom:1px solid var(--border);font-size:14px}
+.incl-list li:last-child{border-bottom:0}
+.incl-list li::before{content:"✓";color:var(--success);font-weight:800}
+.incl-list li b{white-space:nowrap}
+.incl-list li span{color:var(--muted);font-size:12.5px;margin-left:auto;text-align:right}
+.always{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.section-t{font-weight:700;font-size:15px;margin:22px 0 10px}
+.billing{display:flex;flex-direction:column;gap:10px}
+.bill{position:relative;width:100%;text-align:left;background:#fff;border:1.5px solid var(--border-strong);border-radius:14px;padding:14px 16px 14px 46px;transition:all .15s}
+.bill::before{content:"";position:absolute;left:16px;top:18px;width:20px;height:20px;border-radius:50%;border:2px solid #cfcfcf;background:#fff}
+.bill:hover{border-color:var(--brand)}
+.bill.selected{border-color:var(--brand);background:var(--brand-soft)}
+.bill.selected::before{border-color:var(--brand);background:radial-gradient(circle,var(--brand) 0 5px,#fff 6px)}
+.b-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.b-name{font-weight:800;font-size:16px}
+.b-badge{display:inline-block;white-space:nowrap;font-size:11px;font-weight:700;color:#fff;background:var(--brand);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:2px}
+.b-price{font-weight:800;font-size:22px;letter-spacing:-.02em;white-space:nowrap}
+.b-price small{font-size:12px;color:var(--muted);font-weight:600}
+.b-rows{margin-top:8px;display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--text-2)}
+.b-rows div{display:flex;justify-content:space-between;gap:10px}
+.b-rows b{white-space:nowrap;color:var(--text)}
+.save{display:inline-block;margin-top:8px;background:var(--success-soft);color:#155d35;font-weight:700;font-size:12px;padding:3px 9px;border-radius:999px}
+.platinum{margin-top:8px;font-size:12.5px;color:#3d424d;background:#eef0f4;border-radius:8px;padding:7px 10px}
+.platinum b{color:#1f2329}
+.detalhe{margin-top:12px;font-size:13px;color:var(--text-2)}
+.detalhe summary{cursor:pointer;font-weight:700;color:var(--text-2);padding:6px 0}
+.detalhe ul{margin:6px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.detalhe .row{display:flex;justify-content:space-between;gap:10px}
+.detalhe .row span{color:var(--muted)}
+.wa-box{margin-top:18px}
+.wa-note{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,24px);opacity:0;pointer-events:none;background:#1f1f1f;color:#fff;padding:10px 16px;border-radius:10px;font-size:13.5px;font-weight:600;box-shadow:0 12px 26px rgba(0,0,0,.22);transition:all .3s ease;z-index:100;max-width:calc(100% - 32px)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.toast i{width:22px;height:22px;border-radius:50%;background:var(--success);display:grid;place-items:center;font-style:normal;font-size:12px;flex:0 0 22px}
+.toast::before{content:"✓";color:#5fd38d;margin-right:8px;font-weight:800}
 
-/* Barra inferior mobile */
-.mobile-bar{display:none}
+footer.site{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 28px}
 
-/* ---------- Faixa "Todos os planos contam com" ---------- */
-.allplans{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;margin-top:20px}
-.allplans-in{max-width:1180px;margin:0 auto;padding:46px 16px}
-.allplans h3{text-align:center;font-size:clamp(22px,3vw,30px);margin:0 0 6px}
-.allplans .sub{text-align:center;opacity:.85;margin:0 0 28px}
-.allplans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.allplans-grid div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:18px}
-.allplans-grid b{display:block;margin-bottom:4px}
-.allplans-grid p{margin:0;font-size:13.5px;opacity:.9}
-footer.site{text-align:center;font-size:12px;color:var(--muted);padding:22px 16px 90px}
-
-/* ---------- Responsivo ---------- */
-@media (max-width:980px){
-  .main{grid-template-columns:1fr}
-  .side{position:static}
-  .plan-box{display:none}
-  .hero-in{grid-template-columns:1fr}
-  .hero-img{display:none}
-  .tiers{grid-template-columns:1fr 1fr}
-  .mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--brand-soft-2);border-top:1px solid #f4c9d2;padding:10px 16px;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -4px 14px rgba(0,0,0,.06)}
-  .mobile-bar span{font-size:12px;color:var(--text-2);display:block}
-  .mobile-bar b{font-size:20px;color:var(--brand)}
-  .mobile-bar b small{font-size:12px;color:var(--muted)}
-  .toast{bottom:84px}
-  .allplans-grid{grid-template-columns:1fr 1fr}
+@media (max-width:480px){
+  .step{padding:18px 16px}
+  .step h2{font-size:18px}
+  .consultor .txt{display:none}
+  .b-price{font-size:20px}
 }
-@media (max-width:640px){
-  .step{padding:22px 18px}
-  .benefits,.choices,.billing{grid-template-columns:1fr}
-  .progress .lbl{display:none}
-  .allplans-grid{grid-template-columns:1fr}
-  .consultor-chip .txt{display:none}
-  .logo{height:28px}
-  .step-head{gap:12px}
-  .step-icon{width:46px;height:46px;flex-basis:46px}
-}
-
-/* ---------- Resultado: inclusos + cartão/boleto ---------- */
-.incl-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.incl{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--bg-light)}
-.incl .i-ck{flex:0 0 26px;height:26px;border-radius:8px;background:var(--success);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
-.incl b{display:block;font-size:14.5px}
-.incl small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:1px}
-.incl.always{background:#fff;border-style:dashed}
-.incl.always .i-ck{background:var(--brand)}
-.price-head{margin-top:30px;padding-top:24px;border-top:1px solid var(--border)}
-.price-head p{margin:4px 0 0;color:var(--text-2);font-size:14px}
-.bill .b-lbl{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
-.bill .b-price{margin-top:0}
-.bill .b-day{font-size:12.5px;color:var(--text-2)}
-.split{margin-top:10px;border-top:1px dashed var(--border-strong);padding-top:10px;display:flex;flex-direction:column;gap:9px}
-.split-row{display:flex;gap:10px;align-items:flex-start;font-size:13px}
-.split-row .sp-ic{flex:0 0 28px;height:28px;border-radius:8px;display:grid;place-items:center}
-.split-row .sp-ic svg{width:16px;height:16px}
-.sp-ic.card{background:#eef3ff;color:#2f5bd3}
-.sp-ic.boleto{background:#fff4e0;color:#a35f00}
-.split-row .sp-t{flex:1;min-width:0}
-.split-row .sp-t b{display:block;font-size:13px}
-.split-row .sp-t small{display:block;color:var(--muted);font-size:11.5px;line-height:1.3}
-.split-row .sp-v{font-weight:800;white-space:nowrap;font-size:14px}
-.split-row .sp-v small{font-weight:600;color:var(--muted);font-size:11px}
-.bill.only{grid-column:1/-1}
-.detalhe{margin-top:16px;border:1px solid var(--border);border-radius:12px;padding:0 16px;background:#fff}
-.detalhe summary{cursor:pointer;padding:13px 0;font-weight:700;font-size:14px;color:var(--text-2);list-style:none}
-.detalhe summary::-webkit-details-marker{display:none}
-.detalhe summary::after{content:"＋";float:right;color:var(--brand)}
-.detalhe[open] summary::after{content:"－"}
-.detalhe .summary-list{margin:0 0 14px}
-.cobranca{margin-top:16px;padding:16px 18px;border-radius:12px;background:var(--bg-light);border:1px solid var(--border);font-size:13px;color:var(--text-2)}
-.cobranca b.ct{display:block;color:var(--text);font-size:14px;margin-bottom:6px}
-.cobranca ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
-.pb-lines li .pk{color:var(--success);font-weight:800;margin-right:6px}
-@media (max-width:640px){.incl-grid{grid-template-columns:1fr}}
-.field-hint{font-size:12.5px;color:var(--muted);margin-top:6px}
-.ia-box{margin-top:26px;padding:20px;border-radius:14px;background:linear-gradient(160deg,#fff 0%,var(--brand-soft) 100%);border:1px solid #f4d3da}
-.ia-box .choice{background:#fff}
-.ia-box .choice.selected{background:var(--brand-soft)}
 </style>
 </head>
 <body>
-
-<div class="topbar"><b>Novo</b> Monte ou atualize o seu plano Revenda Mais em poucos passos.</div>
 
 <header class="site">
   <div class="header-in">
@@ -328,362 +173,203 @@ footer.site{text-align:center;font-size:12px;color:var(--muted);padding:22px 16p
            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="logo-fallback">revenda<span>mais</span></span>
     </a>
-    <div class="consultor-chip" id="consultorChip">
-      <div class="txt" style="text-align:right"><small>Seu consultor</small><b id="consultorNome">Time Comercial</b></div>
+    <div class="consultor">
+      <div class="txt">Seu consultor<b id="consultorNome">Time Comercial</b></div>
       <div class="av" id="consultorAv">RM</div>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-in">
-    <div>
-      <div class="eyebrow">Monte seu plano · <span id="heroLoja">Revenda Mais</span></div>
-      <h1>Monte o <em>plano ideal</em> para a sua loja em poucos passos.</h1>
-      <p>Vai contratar ou trocar o seu plano? Escolha módulo a módulo o que faz sentido para a sua operação. No final, você vê quanto fica — no mensal e no anual.</p>
-      <button class="btn btn-primary" onclick="document.getElementById('montador').scrollIntoView({behavior:'smooth'})">Começar agora →</button>
-      <div class="hero-points"><span>Leva menos de 2 minutos</span><span>Valores transparentes</span><span>Envio direto ao seu consultor</span></div>
-    </div>
-    <div class="hero-img">
-      <img src="https://revendamais.com.br/wp-content/uploads/2023/10/composicao-768x768.png" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
+<main class="wrap">
+  <div class="intro">
+    <h1>Monte o <em>seu plano</em> Revenda Mais</h1>
+    <p>Responda sim ou não. No final, você vê quanto fica.</p>
   </div>
-</section>
 
-<div class="progress-wrap" id="montador">
-  <ol class="progress" id="progress"></ol>
-</div>
+  <div class="progress" id="montador">
+    <div class="p-txt"><span id="pTxt">Passo 1</span><b id="pLbl">Gestão</b></div>
+    <div class="p-bar"><i id="pBar"></i></div>
+  </div>
 
-<main class="main">
   <section class="card" aria-live="polite">
 
     <!-- 1) SISTEMA DE GESTÃO -->
     <div class="step" data-step="gestao">
-      <div class="step-head">
-        <div class="step-icon"><img src="https://revendamais.com.br/wp-content/uploads/2024/06/integracao.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'⚙️'}))"></div>
-        <div>
-          <div class="step-kicker">Sistema de Gestão</div>
-          <h2>Você quer um sistema de gestão para a sua loja?</h2>
-          <p class="lead">O coração da loja: clientes, compras, vendas, avaliações e contratos em um só lugar.</p>
-        </div>
-      </div>
-      <ul class="benefits">
-        <li>Controle de clientes</li>
-        <li>Controle de compras e vendas</li>
-        <li>Avaliação de veículos</li>
-        <li>Emissão de contratos</li>
-        <li>Gestão completa do estoque</li>
-        <li>Cadastro fácil pela placa</li>
-        <li>Integrador para portais de anúncio</li>
-        <li>Controle de despachante e comissões</li>
-        <li>Guarda de arquivos (DUT, CNH, contratos)</li>
-        <li>Relatórios gerenciais</li>
-      </ul>
-      <div class="q">Deseja incluir o Sistema de Gestão no seu plano?</div>
+      <div class="kicker">Sistema de Gestão</div>
+      <h2>Você quer um sistema de gestão para a sua loja?</h2>
       <div class="choices" data-field="gestao">
-        <button class="choice" data-value="sim"><b>Sim, quero o Sistema de Gestão</b><small>Recomendado para organizar toda a loja</small></button>
-        <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Quero ver as outras soluções</small></button>
+        <button class="choice" data-value="sim"><b>Sim, quero</b></button>
+        <button class="choice" data-value="nao"><b>Não, obrigado</b></button>
       </div>
-      <div class="notice info hidden" id="semGestaoNotice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        <div><b>Sem problema!</b> Você ainda pode contratar a Assinatura Eletrônica e o CRM com Agente de IA. Só para saber: o controle financeiro e a emissão de notas fiscais são exclusivos de quem tem o Sistema de Gestão.</div>
+      <div class="notice info hidden" id="semGestaoNotice">Sem gestão, você ainda pode ter Assinatura Eletrônica e CRM. Financeiro e notas fiscais são só para quem tem o sistema.</div>
+      <div class="inclui">
+        <div class="i-t">O que está incluso</div>
+        <ul class="chips"><li>Clientes</li><li>Compras e vendas</li><li>Avaliação de veículos</li><li>Contratos</li><li>Estoque</li><li>Anúncios nos portais</li></ul>
       </div>
-      <div class="step-actions">
-        <span></span>
-        <button class="btn btn-primary" data-next disabled>Continuar →</button>
-      </div>
+      <div class="actions"><span></span><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 2) FINANCEIRO + 2.1) ESTOQUE -->
     <div class="step" data-step="financeiro">
-      <div class="step-head">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-        <div>
-          <div class="step-kicker">Financeiro e estoque</div>
-          <h2>Você gostaria de fazer o controle financeiro da sua loja?</h2>
-          <p class="lead">Controle integrado ao sistema gerencial: saiba exatamente quanto entra, quanto sai e quanto sobra.</p>
-        </div>
-      </div>
-      <ul class="benefits">
-        <li>Contas a pagar</li>
-        <li>Contas a receber</li>
-        <li>Saldo das contas bancárias</li>
-        <li>Controle de fluxo de caixa</li>
-        <li>Demonstrativo de resultados (DRE)</li>
-        <li>Demonstrativo de fluxo de caixa</li>
-        <li>Comparativo de categorias de despesas</li>
-        <li>Integrado ao sistema gerencial</li>
-      </ul>
-      <div class="q">Você quer o controle financeiro no seu plano?</div>
+      <div class="kicker">Controle financeiro</div>
+      <h2>Você quer fazer o controle financeiro da loja?</h2>
       <div class="choices" data-field="financeiro">
-        <button class="choice" data-value="sim"><b>Sim, quero o financeiro</b><small>Somente a partir do <span class="fin-plan-label">Plano 1.0</span></small></button>
-        <button class="choice" data-value="nao"><b>Não, por enquanto</b><small>Posso incluir depois</small></button>
+        <button class="choice" data-value="sim"><b>Sim, quero</b><small>A partir do <span class="fin-plan-label">Plano 1.0</span></small></button>
+        <button class="choice" data-value="nao"><b>Não, por enquanto</b></button>
       </div>
-      <div class="notice info hidden" id="finNaoNotice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        <div>Sem problema! Só para você saber: <b>o controle financeiro está disponível a partir do <span class="fin-plan-label">Plano 1.0</span></b> (de 26 a 50 veículos). Nesses planos ele já vem incluso.</div>
-      </div>
-      <div class="notice ok hidden" id="finSimNotice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        <div>Ótima escolha! O financeiro vem <b>incluso</b> a partir do <span class="fin-plan-label">Plano 1.0</span>. Agora escolha o tamanho do seu estoque.</div>
-      </div>
+      <div class="notice info hidden" id="finNaoNotice">O financeiro está disponível a partir do <span class="fin-plan-label">Plano 1.0</span> (26 a 50 veículos).</div>
 
       <div class="reveal hidden" id="tiersReveal">
-        <div class="q" style="margin-bottom:4px">Quantos veículos você possui em estoque?</div>
-        <p class="lead" style="font-size:14px;margin-bottom:14px">Os planos são segmentados pelo tamanho do estoque. Afinal, uma loja com 20 veículos não pode pagar o mesmo que uma loja com 200!</p>
-        <div class="tiers" id="tiers"></div>
+        <p class="sub-q">Quantos veículos você tem em estoque?</p>
+        <p class="hint">O valor acompanha o tamanho do estoque: quem tem 20 carros não paga o mesmo que quem tem 200.</p>
+        <div class="choices" id="tiers"></div>
         <div class="field hidden" id="veicField">
-          <label for="veicInput">Quantos veículos você tem em estoque?</label>
+          <label for="veicInput">Quantos veículos, exatamente?</label>
           <input id="veicInput" type="number" inputmode="numeric" min="151" step="1" placeholder="Ex.: 220">
-          <div class="field-hint">Acima de 150 veículos: Plano 3.0 + franquias de 50 veículos adicionais.</div>
         </div>
       </div>
 
-      <div class="step-actions">
-        <button class="link-back" data-back>← Voltar</button>
-        <button class="btn btn-primary" data-next disabled>Continuar →</button>
+      <div class="inclui">
+        <div class="i-t">O que está incluso</div>
+        <ul class="chips"><li>Contas a pagar e receber</li><li>Saldo dos bancos</li><li>Fluxo de caixa</li><li>DRE</li><li>Despesas por categoria</li></ul>
       </div>
+      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 3) ASSINATURA ELETRÔNICA -->
     <div class="step" data-step="assinatura">
-      <div class="step-head">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
-        <div>
-          <div class="step-kicker">Assinatura eletrônica</div>
-          <h2>Você gostaria de assinar os contratos de forma rápida, com assinatura eletrônica?</h2>
-          <p class="lead">Contratos de compra, venda e consignação assinados em minutos, com a tecnologia da Clicksign.</p>
-        </div>
-      </div>
-      <ul class="benefits">
-        <li>Assinatura sem o cliente ir à loja</li>
-        <li>Validade jurídica</li>
-        <li>Envio via WhatsApp, SMS ou e-mail</li>
-        <li>Notificações automáticas</li>
-        <li>Contratos guardados no sistema</li>
-        <li>Histórico por cliente e por veículo</li>
-      </ul>
-      <div class="q">Você quer a assinatura eletrônica no seu plano?</div>
+      <div class="kicker">Assinatura eletrônica</div>
+      <h2>Você quer assinar contratos com assinatura eletrônica?</h2>
       <div class="choices" data-field="assinatura">
-        <button class="choice" data-value="sim"><b>Sim, quero assinar eletronicamente</b><small>Compra, venda e consignação</small></button>
-        <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Sigo sem a assinatura eletrônica</small></button>
+        <button class="choice" data-value="sim"><b>Sim, quero</b><small>Compra, venda e consignação</small></button>
+        <button class="choice" data-value="nao"><b>Não, obrigado</b></button>
       </div>
-      <div class="step-actions">
-        <button class="link-back" data-back>← Voltar</button>
-        <button class="btn btn-primary" data-next disabled>Continuar →</button>
+      <div class="inclui">
+        <div class="i-t">O que está incluso</div>
+        <ul class="chips"><li>Tecnologia Clicksign</li><li>Validade jurídica</li><li>Cliente assina sem ir à loja</li><li>Envio por WhatsApp ou e-mail</li></ul>
       </div>
+      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 4) CRM + 4.1) USUÁRIOS + 4.2) AGENTE DE IA + 4.3) LEADS -->
     <div class="step" data-step="crm">
-      <div class="step-head">
-        <div class="step-icon"><img src="https://revendamais.com.br/wp-content/uploads/2024/06/crm.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'💬'}))"></div>
-        <div>
-          <div class="step-kicker">CRM e Agente de IA</div>
-          <h2>Você quer um CRM para fazer a gestão dos seus leads?</h2>
-          <p class="lead">Centralize os leads dos portais, responda mais rápido e acompanhe cada venda.</p>
-        </div>
-      </div>
-      <ul class="benefits">
-        <li>Integração com a API Oficial do WhatsApp</li>
-        <li>Captura automática de leads dos portais</li>
-        <li>Funil de vendas em Kanban</li>
-        <li>Registro de tarefas e follow-ups</li>
-        <li>Histórico completo das interações</li>
-        <li>Dashboard de indicadores</li>
-      </ul>
-      <div class="q">Você quer o CRM no seu plano?</div>
+      <div class="kicker">CRM</div>
+      <h2>Você quer um CRM para gerenciar seus leads?</h2>
       <div class="choices" data-field="crm">
-        <button class="choice" data-value="sim"><b>Sim, quero o CRM</b><small>Gestão de leads com WhatsApp oficial</small></button>
-        <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Sigo sem o CRM por enquanto</small></button>
+        <button class="choice" data-value="sim"><b>Sim, quero</b></button>
+        <button class="choice" data-value="nao"><b>Não, obrigado</b></button>
       </div>
 
       <div class="reveal hidden" id="crmReveal">
-        <div class="q">Quantos usuários você precisa para o CRM?</div>
-        <div class="stepper-row">
-          <div class="stepper">
-            <button type="button" id="usrMinus" aria-label="Menos usuários">−</button>
-            <output id="usrCount">3</output>
-            <button type="button" id="usrPlus" aria-label="Mais usuários">+</button>
-          </div>
-          <div class="users-info" id="usersInfo"></div>
+        <p class="sub-q">Quantos usuários vão usar o CRM?</p>
+        <div class="stepper">
+          <button type="button" id="usrMinus" aria-label="Menos usuários">−</button>
+          <output id="usrCount">3</output>
+          <button type="button" id="usrPlus" aria-label="Mais usuários">+</button>
         </div>
+        <p class="hint" style="margin:6px 0 0">De 1 a 30 usuários.</p>
 
-        <div class="ia-box">
-          <div class="q" style="margin-top:0">Você quer ativar um Agente de IA para fazer o primeiro atendimento?</div>
-          <p class="lead" style="font-size:14px;margin-bottom:14px">Atendimento rápido e padronizado, qualificando os leads antes de passar para os seus vendedores. O agente resolve os dois maiores problemas das lojas de veículos: <b>a demora no atendimento</b> e <b>a falta de padronização</b>.</p>
-          <div class="choices" data-field="ia">
-            <button class="choice" data-value="sim"><b>Sim, quero o Agente de IA</b><small>Primeiro atendimento em segundos</small></button>
-            <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Meus vendedores fazem o primeiro contato</small></button>
-          </div>
-          <div class="field hidden" id="leadsField">
-            <label for="leadsInput">Quantos leads você recebe por mês, em média?</label>
-            <input id="leadsInput" type="number" inputmode="numeric" min="1" step="1" placeholder="Ex.: 400">
-            <div class="field-hint">O agente trabalha com franquias de <span class="ia-leads">500</span> leads/mês. Calculamos quantas você precisa no resumo final.</div>
-          </div>
+        <p class="sub-q" style="margin-top:18px">Quer um Agente de IA para fazer o primeiro atendimento?</p>
+        <p class="hint">Responde o lead em segundos, sempre do mesmo jeito, e só passa para o vendedor quem quer comprar.</p>
+        <div class="choices" data-field="ia">
+          <button class="choice" data-value="sim"><b>Sim, quero</b></button>
+          <button class="choice" data-value="nao"><b>Não, obrigado</b></button>
+        </div>
+        <div class="field hidden" id="leadsField">
+          <label for="leadsInput">Quantos leads você recebe por mês, em média?</label>
+          <input id="leadsInput" type="number" inputmode="numeric" min="1" step="1" placeholder="Ex.: 400">
         </div>
       </div>
 
-      <div class="notice info hidden" id="nadaNotice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        <div>Escolha pelo menos um produto para montar o seu plano. Use “Voltar” para revisar as etapas.</div>
+      <div class="notice info hidden" id="nadaNotice">Escolha pelo menos um produto para montar o seu plano.</div>
+      <div class="inclui">
+        <div class="i-t">O que está incluso</div>
+        <ul class="chips"><li>WhatsApp oficial</li><li>Leads dos portais</li><li>Funil em Kanban</li><li>Indicadores</li></ul>
       </div>
-      <div class="step-actions">
-        <button class="link-back" data-back>← Voltar</button>
-        <button class="btn btn-primary" data-next disabled>Continuar →</button>
-      </div>
+      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 5) NF-e DE PRODUTO + 5.1) RENAVE -->
     <div class="step" data-step="nf">
-      <div class="step-head">
-        <div class="step-icon"><img src="https://revendamais.com.br/wp-content/uploads/2024/06/nfe.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'🧾'}))"></div>
-        <div>
-          <div class="step-kicker">Nota fiscal de produto</div>
-          <h2>Você gostaria de emitir notas fiscais de produtos?</h2>
-          <p class="lead">NF-e modelo 55: compra, venda, consignação, devolução e mais, sem sair do Revenda Mais.</p>
-        </div>
-      </div>
-      <div class="notice brand" style="margin-top:0">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        <div><b>Importante:</b> esta é a <b>nota fiscal de produto (NF-e, modelo 55)</b>. Ela <b>não é nota de serviço</b> — a nota de serviço é a próxima etapa.</div>
-      </div>
-      <ul class="benefits">
-        <li>Cálculo automático de impostos</li>
-        <li>Envio automático à SEFAZ</li>
-        <li>Cancelamento e carta de correção</li>
-        <li>Armazenamento de XML e DANFE</li>
-        <li>Exportação de XML para a contabilidade</li>
-        <li>Consulta de status da nota</li>
-      </ul>
-      <div class="q">Você quer emitir NF-e de produto?</div>
+      <div class="kicker">Nota fiscal de produto</div>
+      <h2>Você quer emitir nota fiscal de produto (NF-e)?</h2>
       <div class="choices" data-field="nf">
-        <button class="choice" data-value="sim"><b>Sim, quero emitir NF-e</b><small>Compra, venda, consignação, devolução…</small></button>
-        <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Sigo sem o emissor de NF-e</small></button>
+        <button class="choice" data-value="sim"><b>Sim, quero</b><small>Compra, venda, consignação, devolução</small></button>
+        <button class="choice" data-value="nao"><b>Não, obrigado</b></button>
       </div>
+      <div class="notice brand">É a nota de <b>produto</b> (modelo 55), não a de serviço.</div>
+
       <div class="reveal hidden" id="nfReveal">
-        <div class="q" style="margin-bottom:4px">Você quer deixar pronta a integração com uma empresa de Renave?</div>
-        <p class="lead" style="font-size:14px;margin-bottom:14px">A integração envia as informações do Revenda Mais para a empresa de Renave que você usa ou vai contratar, facilitando o processo e garantindo consistência das informações e velocidade.</p>
+        <p class="sub-q">Quer deixar pronta a integração com sua empresa de Renave?</p>
+        <p class="hint">Os dados vão direto do Revenda Mais para a empresa de Renave, sem redigitar.</p>
         <div class="choices" data-field="renave">
-          <button class="choice" data-value="sim"><b>Sim, quero a integração</b><small>Renave mais rápido e sem retrabalho</small></button>
-          <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Sigo sem a integração</small></button>
+          <button class="choice" data-value="sim"><b>Sim, quero</b></button>
+          <button class="choice" data-value="nao"><b>Não, obrigado</b></button>
         </div>
       </div>
-      <div class="step-actions">
-        <button class="link-back" data-back>← Voltar</button>
-        <button class="btn btn-primary" data-next disabled>Continuar →</button>
+
+      <div class="inclui">
+        <div class="i-t">O que está incluso</div>
+        <ul class="chips"><li>Impostos calculados</li><li>Envio à SEFAZ</li><li>XML e DANFE guardados</li><li>Carta de correção</li></ul>
       </div>
+      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Continuar →</button></div>
     </div>
 
     <!-- 6) NFS-e DE SERVIÇO -->
     <div class="step" data-step="nfse">
-      <div class="step-head">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
-        <div>
-          <div class="step-kicker">Nota fiscal de serviço</div>
-          <h2>Você gostaria de emitir notas fiscais de serviços?</h2>
-          <p class="lead">Nota de prestação de serviços (NFS-e) integrada com a prefeitura, direto do sistema.</p>
-        </div>
-      </div>
-      <div class="q">Você quer emitir NFS-e de serviço?</div>
+      <div class="kicker">Nota fiscal de serviço</div>
+      <h2>Você quer emitir nota fiscal de serviço (NFS-e)?</h2>
       <div class="choices" data-field="nfse">
-        <button class="choice" data-value="sim"><b>Sim, quero emitir NFS-e</b><small>Integrada com a prefeitura</small></button>
-        <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Sigo sem a nota de serviço</small></button>
+        <button class="choice" data-value="sim"><b>Sim, quero</b></button>
+        <button class="choice" data-value="nao"><b>Não, obrigado</b></button>
       </div>
-      <div class="step-actions">
-        <button class="link-back" data-back>← Voltar</button>
-        <button class="btn btn-primary" data-next disabled>Ver meu plano →</button>
+      <div class="inclui">
+        <div class="i-t">O que está incluso</div>
+        <ul class="chips"><li>Integrada com a prefeitura</li><li>Emissão direto do sistema</li></ul>
       </div>
+      <div class="actions"><button class="link" data-back>← Voltar</button><button class="btn btn-primary" data-next disabled>Ver meu plano →</button></div>
     </div>
 
-    <!-- ETAPA 5: RESULTADO — único lugar onde aparecem valores -->
+    <!-- RESUMO — único lugar onde aparecem valores -->
     <div class="step" data-step="resumo">
-      <div class="step-head">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <div>
-          <div class="step-kicker">Seu plano</div>
-          <h2>Pronto! Seu plano Revenda Mais está montado.</h2>
-          <p class="lead">Primeiro, tudo o que a sua loja vai ter. Logo abaixo, quanto fica — no mensal e no anual.</p>
-        </div>
-      </div>
+      <div class="kicker">Seu plano</div>
+      <h2>Pronto! Este é o seu plano.</h2>
+      <ul class="incl-list" id="inclList"></ul>
+      <p class="always">Sempre incluso: suporte em menos de 2 min, backup diário e servidores AWS.</p>
 
-      <div class="q">O que está no seu plano</div>
-      <div class="incl-grid" id="inclGrid"></div>
-
-      <div class="price-head">
-        <div class="q" style="margin:0">Quanto fica o seu plano</div>
-        <p>Escolha o formato que prefere manter. Os valores já mostram o que vai no cartão e o que vai no boleto.</p>
-      </div>
+      <p class="section-t">Como você prefere pagar?</p>
       <div class="billing" id="billing"></div>
 
       <details class="detalhe">
-        <summary>Ver detalhamento por módulo</summary>
-        <ul class="summary-list" id="summaryList"></ul>
+        <summary>Como funciona a cobrança</summary>
+        <ul id="cobranca"></ul>
+      </details>
+      <details class="detalhe">
+        <summary>Valor de cada item</summary>
+        <ul id="summaryList"></ul>
       </details>
 
-      <div class="cobranca" id="cobranca"></div>
-
-      <div class="field" id="lojaField">
+      <div class="field">
         <label for="lojaInput">Nome da sua loja</label>
         <input id="lojaInput" type="text" placeholder="Ex.: Federal Car" autocomplete="organization">
       </div>
 
       <div class="wa-box">
         <button class="btn btn-wa" id="waBtn" disabled onclick="sendWhatsApp()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
-          <span id="waLabel">Selecione mensal ou anual</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          <span id="waLabel">Escolha mensal ou anual</span>
         </button>
-        <div class="wa-note">Você será direcionado ao WhatsApp do seu consultor com o resumo do plano já preenchido.</div>
+        <div class="wa-note">Abre o WhatsApp do seu consultor com o plano já preenchido.</div>
       </div>
 
-      <div class="step-actions">
-        <button class="link-back" data-back>← Voltar e ajustar</button>
-        <button class="link-back" onclick="restart()">Recomeçar</button>
-      </div>
+      <div class="actions"><button class="link" data-back>← Voltar e ajustar</button><button class="link" onclick="restart()">Recomeçar</button></div>
     </div>
   </section>
-
-  <!-- Painel lateral -->
-  <aside class="side">
-    <div class="card plan-box">
-      <h3>Seu plano até agora</h3>
-      <p class="pb-sub">Atualiza a cada escolha</p>
-      <ul class="pb-lines" id="pbLines"></ul>
-      <div class="pb-foot">💡 Os valores aparecem no final, com mensal e anual lado a lado.</div>
-    </div>
-
-    <div class="card value-box" id="valueBox"></div>
-
-    <div class="card google">
-      <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
-      <div><span class="g-score">EXCELENTE</span> <span class="stars">★★★★★</span><small>Com base em 1.585 avaliações no Google</small></div>
-    </div>
-  </aside>
 </main>
 
-<section class="allplans">
-  <div class="allplans-in">
-    <h3>Todos os planos contam com</h3>
-    <p class="sub">Mais de 5.000 lojas de veículos confiam no Revenda Mais todos os dias.</p>
-    <div class="allplans-grid">
-      <div><b>Logs de acesso</b><p>Acompanhe as ações de cada usuário com mais controle, transparência e segurança.</p></div>
-      <div><b>Segurança de dados</b><p>Login e senha exclusivos por usuário e dados protegidos com criptografia.</p></div>
-      <div><b>Backup em 3 lugares diferentes</b><p>Backup diário redundante em três locais distintos, para nunca perder nada.</p></div>
-      <div><b>Guarda de arquivos</b><p>DUT, CNH, contratos e documentos organizados e fáceis de encontrar.</p></div>
-      <div><b>Servidores Amazon AWS</b><p>Plataforma líder em segurança e desempenho, disponível o tempo todo.</p></div>
-      <div><b>Suporte por chamado e chat</b><p>Da implantação ao dia a dia, com tempo médio de atendimento abaixo de 2 minutos.</p></div>
-    </div>
-  </div>
-</section>
+<footer class="site">Revenda Mais · Uma empresa Webmotors</footer>
 
-<footer class="site">Revenda Mais · Uma empresa Webmotors · Valores sujeitos à confirmação do seu consultor comercial.</footer>
-
-<div class="mobile-bar" id="mobileBar">
-  <div><span>Seu plano</span><b id="mbCount">Nenhum módulo ainda</b></div>
-  <button class="btn btn-primary" style="padding:10px 16px;font-size:14px" onclick="document.getElementById('montador').scrollIntoView({behavior:'smooth'})">Ver etapas</button>
-</div>
-
-<div class="toast" id="toast"><i>✓</i><span id="toastText"></span></div>
+<div class="toast" id="toast"></div>
 
 <script>
 /* =========================================================
@@ -697,11 +383,11 @@ const CONFIG = {
 
   // Sistema de Gestão por tamanho de estoque (cartão). anual = valor por mês na opção anual
   planos: [
-    { id: 'p05', nome: 'Plano 0.5', de: 0,   ate: 25,  mensal: 600,  anual: 450,  financeiro: false, destaque: 'Melhor custo-benefício' },
-    { id: 'p10', nome: 'Plano 1.0', de: 26,  ate: 50,  mensal: 800,  anual: 600,  financeiro: true,  destaque: 'Mais popular' },
-    { id: 'p20', nome: 'Plano 2.0', de: 51,  ate: 100, mensal: 1000, anual: 800,  financeiro: true,  destaque: 'Ideal para grandes lojas' },
-    { id: 'p30', nome: 'Plano 3.0', de: 101, ate: 150, mensal: 1200, anual: 1000, financeiro: true,  destaque: 'Para operações maiores' },
-    { id: 'pmais', nome: 'Plano 3.0', de: 151, ate: null, base: 'p30', financeiro: true, destaque: '3.0 + veículos adicionais' }
+    { id: 'p05', nome: 'Plano 0.5', de: 0,   ate: 25,  mensal: 600,  anual: 450,  financeiro: false },
+    { id: 'p10', nome: 'Plano 1.0', de: 26,  ate: 50,  mensal: 800,  anual: 600,  financeiro: true },
+    { id: 'p20', nome: 'Plano 2.0', de: 51,  ate: 100, mensal: 1000, anual: 800,  financeiro: true },
+    { id: 'p30', nome: 'Plano 3.0', de: 101, ate: 150, mensal: 1200, anual: 1000, financeiro: true },
+    { id: 'pmais', nome: 'Plano 3.0 + adicionais', de: 151, ate: null, base: 'p30', financeiro: true }
   ],
   planoMinimoFinanceiro: 'Plano 1.0',
   // Acima de 150 veículos: franquias de 50 veículos adicionais
@@ -732,7 +418,7 @@ const STEPS = [
   { id: 'gestao',     label: 'Gestão' },
   { id: 'financeiro', label: 'Financeiro', soGestao: true },
   { id: 'assinatura', label: 'Assinatura' },
-  { id: 'crm',        label: 'CRM e IA' },
+  { id: 'crm',        label: 'CRM' },
   { id: 'nf',         label: 'NF-e', soGestao: true },
   { id: 'nfse',       label: 'NFS-e', soGestao: true },
   { id: 'resumo',     label: 'Seu plano' }
@@ -745,91 +431,16 @@ const initialState = () => ({
 });
 const state = initialState();
 
-/* ---------- Conteúdo de "agregadores de valor" por etapa ---------- */
-const IC = {
-  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
-  bolt:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg>',
-  chart:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>',
-  users:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>',
-  chat:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
-  doc:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>',
-  cloud:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
-  clock:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
-  car:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M6 17v2M18 17v2M3 13l2-6h14l2 6v4H3z"/><circle cx="7.5" cy="14" r="1"/><circle cx="16.5" cy="14" r="1"/></svg>',
-  pen:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
-  card:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>',
-  boleto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v16M7 4v16M10 4v16M14 4v16M16 4v16M20 4v16"/></svg>'
-};
-const VALUE = {
-  gestao: {
-    kicker: 'Por que vale a pena', title: 'Tudo da sua loja em um só lugar',
-    items: [
-      [IC.car, 'Cadastro pela placa', 'Menos digitação e menos erro na entrada do veículo.'],
-      [IC.bolt, 'Anúncios integrados', 'Publique nos principais portais a partir do próprio estoque.'],
-      [IC.shield, 'Dados seguros na AWS', 'Backup diário em 3 lugares diferentes.']
-    ],
-    quote: ['O sistema é completo, estável e contribui diretamente para a organização dos processos e para a produtividade da equipe.', 'Cristiano Ferreira · Google']
-  },
-  financeiro: {
-    kicker: 'O que o financeiro resolve', title: 'Decisões com base no seu caixa real',
-    items: [
-      [IC.chart, 'DRE e fluxo de caixa', 'Veja o resultado real da loja, mês a mês.'],
-      [IC.doc, 'Saldo das contas bancárias', 'Saiba exatamente quanto de saldo está disponível.'],
-      [IC.users, 'Despesas por categoria', 'Compare onde o dinheiro está indo e corte o que não precisa.']
-    ]
-  },
-  assinatura: {
-    kicker: 'O que a assinatura facilita', title: 'Contrato assinado sem o cliente ir à loja',
-    items: [
-      [IC.pen, 'Tecnologia Clicksign', 'Assinatura eletrônica com validade jurídica.'],
-      [IC.bolt, 'Venda fechada mais rápido', 'Envie por WhatsApp, SMS ou e-mail e receba assinado.'],
-      [IC.cloud, 'Tudo guardado no sistema', 'Histórico por cliente e por veículo.']
-    ]
-  },
-  crm: {
-    kicker: 'O que o CRM entrega', title: 'Mais leads atendidos, mais vendas fechadas',
-    items: [
-      [IC.chat, 'API Oficial do WhatsApp', 'Atenda clientes sem risco de bloqueio do número.'],
-      [IC.bolt, 'Agente de IA no primeiro contato', 'Resposta em segundos e atendimento padronizado antes de chegar ao vendedor.'],
-      [IC.chart, 'Dashboard de indicadores', 'Veja quem atende, quanto converte e onde melhorar.']
-    ]
-  },
-  nf: {
-    kicker: 'O que o emissor facilita', title: 'NF-e emitida em minutos, sem erro',
-    items: [
-      [IC.doc, 'Impostos calculados', 'Cálculo automático e envio direto à SEFAZ.'],
-      [IC.car, 'Renave integrado', 'Dados enviados à sua empresa de Renave sem redigitar.'],
-      [IC.users, 'Integração com a contabilidade', 'Seu contador acessa e exporta as notas com facilidade.']
-    ]
-  },
-  nfse: {
-    kicker: 'O que a NFS-e facilita', title: 'Nota de serviço sem abrir o site da prefeitura',
-    items: [
-      [IC.doc, 'Integrada com a prefeitura', 'Emita a nota de serviço direto do Revenda Mais.'],
-      [IC.clock, 'Menos tempo no administrativo', 'Tudo no mesmo sistema da sua loja.'],
-      [IC.cloud, 'Notas sempre à mão', 'Consulte quando precisar, de onde estiver.']
-    ]
-  },
-  resumo: {
-    kicker: 'Você está em boas mãos', title: 'Incluso em todos os planos',
-    items: [
-      [IC.clock, 'Suporte em menos de 2 min', 'Tempo médio de atendimento por chamado e chat.'],
-      [IC.shield, 'Backup em 3 lugares', 'Redundância diária para nunca perder dados.'],
-      [IC.cloud, 'Servidores Amazon AWS', 'Segurança e disponibilidade o tempo todo.']
-    ],
-    quote: ['Foi sensacional, parabéns à equipe!', 'Roma Veículos · Google']
-  }
-};
-
+// Agregadores de valor: aparecem rapidamente ao dizer "sim"
 const TOASTS = {
-  gestao_sim: 'Sistema de Gestão adicionado: clientes, estoque e contratos',
-  financeiro_sim: 'Financeiro: DRE, fluxo de caixa e contas em um só lugar',
-  assinatura_sim: 'Assinatura eletrônica: contratos assinados sem ir à loja',
-  crm_sim: 'CRM adicionado: leads dos portais direto no seu WhatsApp',
-  ia_sim: 'Agente de IA: primeiro atendimento em segundos',
-  nf_sim: 'Emissor de NF-e adicionado: notas em minutos',
-  renave_sim: 'Integração Renave: processo mais rápido e consistente',
-  nfse_sim: 'NFS-e adicionada: nota de serviço integrada à prefeitura'
+  gestao_sim: 'Gestão: clientes, estoque e contratos em um só lugar',
+  financeiro_sim: 'Financeiro: DRE, fluxo de caixa e contas',
+  assinatura_sim: 'Contratos assinados sem o cliente ir à loja',
+  crm_sim: 'Leads dos portais direto no seu WhatsApp',
+  ia_sim: 'Primeiro atendimento em segundos',
+  nf_sim: 'Notas fiscais em minutos, sem erro',
+  renave_sim: 'Renave mais rápido e sem redigitar',
+  nfse_sim: 'Nota de serviço integrada à prefeitura'
 };
 
 /* ---------- Regras e cálculos ---------- */
@@ -850,37 +461,28 @@ const algumProduto = () => temGestao() || state.assinatura === 'sim' || state.cr
 function itens() {
   const I = [];
   const p = planoSel();
-  if (temGestao()) {
-    const base = p && p.base ? CONFIG.planos.find(x => x.id === p.base) : p;
-    I.push({ key: 'gestao', nome: 'Sistema de Gestão',
-      sub: p ? `${base.nome} · ${p.ate === null && state.veiculos ? state.veiculos + ' veículos' : faixaTxt(p)}` : 'escolha o estoque',
-      beneficio: 'Clientes, compras, vendas, avaliações e contratos', pag: 'cartao',
-      mensal: base ? base.mensal : 0, anualMes: base ? base.anual : 0 });
+  if (temGestao() && p) {
+    const base = p.base ? CONFIG.planos.find(x => x.id === p.base) : p;
+    I.push({ nome: 'Sistema de Gestão', sub: `${base.nome} · ${p.ate === null && state.veiculos ? state.veiculos + ' veículos' : faixaTxt(p)}`,
+      pag: 'cartao', mensal: base.mensal, anualMes: base.anual });
     const fv = franquiasVeiculos();
-    if (fv) I.push({ key: 'veic', nome: 'Veículos adicionais', sub: `${plural(fv, 'franquia', 'franquias')} de ${CONFIG.veiculosAdicionais.franquia} veículos`,
-      beneficio: 'Capacidade extra acima de 150 veículos', pag: 'cartao',
-      mensal: fv * CONFIG.veiculosAdicionais.mensal, anualMes: fv * CONFIG.veiculosAdicionais.anual });
-    if (p && p.financeiro) I.push({ key: 'fin', nome: 'Controle financeiro', sub: 'incluso no plano', beneficio: 'DRE, fluxo de caixa, contas e saldos bancários', pag: 'incl' });
+    if (fv) I.push({ nome: 'Veículos adicionais', sub: `${plural(fv, 'franquia', 'franquias')} de ${CONFIG.veiculosAdicionais.franquia}`,
+      pag: 'cartao', mensal: fv * CONFIG.veiculosAdicionais.mensal, anualMes: fv * CONFIG.veiculosAdicionais.anual });
+    if (p.financeiro) I.push({ nome: 'Controle financeiro', sub: 'incluso', pag: 'incl' });
   }
-  if (state.assinatura === 'sim') I.push({ key: 'assinatura', nome: 'Assinatura Eletrônica', sub: `Clicksign · + ${brl(CONFIG.assinatura.porDocumento)} por documento`,
-    beneficio: 'Contratos de compra, venda e consignação', pag: 'cartao', mensal: CONFIG.assinatura.mensal, anualMes: CONFIG.assinatura.anual });
+  if (state.assinatura === 'sim') I.push({ nome: 'Assinatura Eletrônica', sub: 'Clicksign', pag: 'cartao', mensal: CONFIG.assinatura.mensal, anualMes: CONFIG.assinatura.anual });
   if (state.crm === 'sim') {
-    I.push({ key: 'crm', nome: 'CRM com WhatsApp', sub: plural(state.usuarios, 'usuário', 'usuários'),
-      beneficio: 'Leads dos portais no WhatsApp oficial, em Kanban', pag: 'boleto', mensal: crmValor(), anualMes: crmValor() });
+    I.push({ nome: 'CRM', sub: plural(state.usuarios, 'usuário', 'usuários'), pag: 'boleto', mensal: crmValor(), anualMes: crmValor() });
     if (state.ia === 'sim') {
       const f = iaFranquias();
-      I.push({ key: 'ia', nome: 'Agente de IA', sub: `${state.leads} leads/mês · ${plural(f, 'franquia', 'franquias')} de ${CONFIG.ia.leads}`,
-        beneficio: 'Primeiro atendimento rápido e padronizado', pag: 'boleto', mensal: f * CONFIG.ia.franquia, anualMes: f * CONFIG.ia.franquia });
+      I.push({ nome: 'Agente de IA', sub: `${state.leads} leads/mês`, pag: 'boleto', mensal: f * CONFIG.ia.franquia, anualMes: f * CONFIG.ia.franquia, franquias: f });
     }
   }
   if (temGestao() && state.nf === 'sim') {
-    I.push({ key: 'nf', nome: 'Emissor de NF-e', sub: 'nota de produto · modelo 55', beneficio: 'Compra, venda, consignação e devolução',
-      pag: 'cartao', mensal: CONFIG.nf.mensal, anualMes: CONFIG.nf.anual });
-    if (state.renave === 'sim') I.push({ key: 'renave', nome: 'Integração Renave', sub: 'com a sua empresa de Renave', beneficio: 'Processo mais rápido e consistente',
-      pag: 'cartao', mensal: CONFIG.renave.mensal, anualMes: CONFIG.renave.anual });
+    I.push({ nome: 'NF-e', sub: 'nota de produto', pag: 'cartao', mensal: CONFIG.nf.mensal, anualMes: CONFIG.nf.anual });
+    if (state.renave === 'sim') I.push({ nome: 'Integração Renave', sub: 'empresa de Renave', pag: 'cartao', mensal: CONFIG.renave.mensal, anualMes: CONFIG.renave.anual });
   }
-  if (temGestao() && state.nfse === 'sim') I.push({ key: 'nfse', nome: 'Emissor de NFS-e', sub: 'nota de serviço', beneficio: 'Integrada com a prefeitura',
-    pag: 'cartao', mensal: CONFIG.nfse.mensal, anualMes: CONFIG.nfse.anual });
+  if (temGestao() && state.nfse === 'sim') I.push({ nome: 'NFS-e', sub: 'nota de serviço', pag: 'cartao', mensal: CONFIG.nfse.mensal, anualMes: CONFIG.nfse.anual });
   return I;
 }
 function naoIncluidos() {
@@ -902,128 +504,84 @@ function totais() {
   const cartao = soma('cartao', 'mensal'), cartaoAnual = soma('cartao', 'anualMes'), boleto = soma('boleto', 'mensal');
   return {
     I, cartao, cartaoAnual, boleto,
-    nomesCartao: I.filter(i => i.pag === 'cartao').map(i => i.nome.replace('Sistema de Gestão', 'Sistema').replace('Emissor de ', '').replace('Assinatura Eletrônica', 'Assinatura')),
-    nomesBoleto: I.filter(i => i.pag === 'boleto').map(i => i.nome.replace(' com WhatsApp', '')),
+    nomesCartao: I.filter(i => i.pag === 'cartao').map(i => i.nome.replace('Sistema de Gestão', 'Sistema').replace('Assinatura Eletrônica', 'Assinatura')),
+    nomesBoleto: I.filter(i => i.pag === 'boleto').map(i => i.nome),
     economiaAno: (cartao - cartaoAnual) * 12
   };
 }
 
 /* ---------- Render ---------- */
 function renderProgress() {
-  $('#progress').innerHTML = STEPS.map((s, i) => {
-    const cls = pula(i) ? 'skipped' : i < state.step ? 'done' : i === state.step ? 'current' : '';
-    return `<li class="${cls}"><div class="bar"><i></i></div><div class="lbl">${s.label}</div></li>`;
-  }).join('');
-}
-function renderValue() {
-  const v = VALUE[STEPS[state.step].id];
-  $('#valueBox').innerHTML = `
-    <div class="vb-kicker">${v.kicker}</div><h4>${v.title}</h4>
-    <ul>${v.items.map(([ic, t, d]) => `<li><span class="ic">${ic}</span><span><b>${t}</b>${d}</span></li>`).join('')}</ul>
-    ${v.quote ? `<div class="quote"><div class="stars">★★★★★</div>“${v.quote[0]}”<cite>${v.quote[1]}</cite></div>` : ''}`;
-}
-// Painel lateral: só o que foi escolhido, sem valores (preço aparece apenas no final)
-function renderSide() {
-  const I = itens();
-  $('#pbLines').innerHTML = I.length
-    ? I.map(i => `<li><span><span class="pk">✓</span>${i.nome}<br><small style="color:var(--muted);margin-left:20px">${i.sub.replace(/ · \+ R\$.*$/, '')}</small></span></li>`).join('')
-    : '<li class="empty">Responda as etapas e acompanhe aqui o que entra no seu plano.</li>';
-  const n = I.length;
-  $('#mbCount').textContent = n ? `${n} ${n > 1 ? 'itens escolhidos' : 'item escolhido'}` : 'Nenhum módulo ainda';
+  const visiveis = STEPS.filter((s, i) => !pula(i));
+  const pos = visiveis.findIndex(s => s.id === STEPS[state.step].id) + 1;
+  const resumo = STEPS[state.step].id === 'resumo';
+  $('#pTxt').textContent = resumo ? 'Tudo pronto' : `Passo ${pos} de ${visiveis.length - 1}`;
+  $('#pLbl').textContent = STEPS[state.step].label;
+  $('#pBar').style.width = `${(pos / visiveis.length) * 100}%`;
 }
 function renderTiers() {
   const finSim = state.financeiro === 'sim';
   $('#tiers').innerHTML = CONFIG.planos.map(p => {
     const disabled = finSim && !p.financeiro;
-    const top = p.ate === null ? 'acima de' : p.de ? `de ${p.de} a` : 'até';
-    const num = p.ate === null ? p.de - 1 : p.ate;
-    const tag = p.financeiro ? `<span class="t-tag fin">✓ Financeiro incluso</span>` : `<span class="t-tag nofin">Sem financeiro</span>`;
-    return `<button class="tier ${state.plano === p.id ? 'selected' : ''}" data-plano="${p.id}" ${disabled ? 'disabled title="Este plano não inclui o controle financeiro"' : ''}>
-      <span class="ribbon">${p.ate === null ? '3.0 +' : p.nome}</span><span class="t-top">${top}</span><span class="t-veh">${num} <small>veículos</small></span>
-      <span class="t-top" style="margin-top:2px">${p.destaque}</span>${tag}</button>`;
+    const faixa = faixaTxt(p);
+    const tag = p.financeiro ? '<span class="tag fin">com financeiro</span>' : '<span class="tag nofin">sem financeiro</span>';
+    return `<button class="choice ${state.plano === p.id ? 'selected' : ''}" data-plano="${p.id}" ${disabled ? 'disabled' : ''}>
+      <b>${faixa.charAt(0).toUpperCase() + faixa.slice(1)}</b><small>${p.nome}</small>${tag}</button>`;
   }).join('');
-  $$('#tiers .tier').forEach(b => b.onclick = () => { state.plano = b.dataset.plano; update(); if (state.plano === 'pmais') $('#veicInput').focus(); });
+  $$('#tiers .choice').forEach(b => b.onclick = () => { state.plano = b.dataset.plano; update(); if (state.plano === 'pmais') $('#veicInput').focus(); });
 }
 function renderUsers() {
   $('#usrCount').textContent = state.usuarios;
   $('#usrMinus').disabled = state.usuarios <= CONFIG.crm.minUsuarios;
   $('#usrPlus').disabled = state.usuarios >= CONFIG.crm.maxUsuarios;
-  $('#usersInfo').innerHTML = `Escolha entre <b>${CONFIG.crm.minUsuarios} e ${CONFIG.crm.maxUsuarios} usuários</b>.<br>Cada vendedor tem o seu acesso ao funil.`;
 }
-
-function splitRow(tipo, titulo, desc, valor) {
-  return `<div class="split-row"><span class="sp-ic ${tipo}">${IC[tipo]}</span>
-    <span class="sp-t"><b>${titulo}</b><small>${desc}</small></span><span class="sp-v">${valor}</span></div>`;
-}
-function billCard(tipo, T, only) {
+function billCard(tipo, T) {
   const anual = tipo === 'anual';
   const cartaoMes = anual ? T.cartaoAnual : T.cartao;
   const total = cartaoMes + T.boleto;
   let rows = '';
-  if (T.nomesCartao.length) rows += splitRow('card', 'Cartão de crédito', T.nomesCartao.join(' + '),
-    anual ? `12x de ${brl(cartaoMes)}` : `${brl(cartaoMes)}<small>/mês</small>`);
-  if (T.boleto) rows += splitRow('boleto', 'Boleto pós-pago', `${T.nomesBoleto.join(' + ')} · na virada do mês`, `${brl(T.boleto)}<small>/mês</small>`);
-
+  if (T.cartao) rows += `<div><span>No cartão</span><b>${anual ? `12x de ${brl(cartaoMes)}` : `${brl(cartaoMes)}/mês`}</b></div>`;
+  if (T.boleto) rows += `<div><span>No boleto (pós-pago)</span><b>${brl(T.boleto)}/mês</b></div>`;
   let extra = '';
-  if (anual) {
-    if (T.economiaAno > 0) extra = `<span class="save">Economia de ${brl(T.economiaAno)} por ano</span>`;
-  } else if (T.cartao > 0) {
-    const pl = T.cartao * (1 - CONFIG.descontoPlatinum);
-    extra = `<div class="platinum">
-      <div class="pl-top"><i></i>Performou Platinum? 50% OFF</div>
-      <div class="pl-val">${brl(pl + T.boleto)}<small style="font-size:12px;font-weight:500">/mês</small> <s>${brl(total)}</s></div>
-      <p>Lojas que performam no nível Platinum pagam metade da mensalidade do sistema (${brl(pl)} no cartão).</p>
-    </div>`;
-  }
-  return `<button class="bill ${only ? 'only' : ''} ${state.billing === tipo ? 'selected' : ''}" data-billing="${tipo}">
-    ${anual ? '<span class="b-badge">🔥 Mais econômico</span>' : ''}
-    <span class="b-name">${anual ? 'Anual' : 'Mensal'}</span>
-    <span class="b-lbl">Mensalidade total</span>
-    <span class="b-price">${brl(total)} <small>/mês</small></span>
-    <span class="b-day">Equivale a cerca de ${brl(total / 30)} por dia</span>
-    <div class="split">${rows}</div>
-    ${extra}
+  if (anual && T.economiaAno > 0) extra = `<span class="save">Economia de ${brl(T.economiaAno)} por ano</span>`;
+  if (!anual && T.cartao > 0) extra = `<div class="platinum">⭐ Performou <b>Platinum</b>? Sistema pela metade: total de <b>${brl(T.cartao * (1 - CONFIG.descontoPlatinum) + T.boleto)}/mês</b></div>`;
+  return `<button class="bill ${state.billing === tipo ? 'selected' : ''}" data-billing="${tipo}">
+    <div class="b-top"><span class="b-name">${anual ? 'Anual' : 'Mensal'}${anual ? '<span class="b-badge">mais barato</span>' : ''}</span>
+      <span class="b-price">${brl(total)} <small>/mês</small></span></div>
+    <div class="b-rows">${rows}</div>${extra}
   </button>`;
 }
 function renderResumo() {
   const T = totais();
-  // O que está incluso — valor antes do preço
-  $('#inclGrid').innerHTML = T.I.map(i => `<div class="incl"><span class="i-ck">✓</span><span><b>${i.nome}</b><small>${i.sub.replace(/ · \+ R\$.*$/, '')} · ${i.beneficio}</small></span></div>`).join('') +
-    `<div class="incl always"><span class="i-ck">★</span><span><b>Sempre incluso</b><small>Suporte em menos de 2 min, backup em 3 lugares e servidores AWS</small></span></div>`;
+  $('#inclList').innerHTML = T.I.map(i => `<li><b>${i.nome}</b><span>${i.sub}</span></li>`).join('');
 
   // Sem nada no cartão não existe anual: mostra só o mensal
   const soMensal = !T.cartao;
   if (soMensal) state.billing = 'mensal';
-  $('#billing').innerHTML = billCard('mensal', T, soMensal) + (soMensal ? '' : billCard('anual', T, false));
+  $('#billing').innerHTML = billCard('mensal', T) + (soMensal ? '' : billCard('anual', T));
   $$('#billing .bill').forEach(b => b.onclick = () => {
     const changed = state.billing !== b.dataset.billing;
     state.billing = b.dataset.billing;
-    if (changed && state.billing === 'anual' && T.economiaAno > 0) toast(`Plano anual: você economiza ${brl(T.economiaAno)} por ano`);
-    if (changed && state.billing === 'mensal' && T.cartao > 0) toast('Performando Platinum, o sistema sai pela metade');
+    if (changed && state.billing === 'anual' && T.economiaAno > 0) toast(`No anual você economiza ${brl(T.economiaAno)} por ano`);
     renderResumo();
   });
 
-  // Detalhamento por módulo
-  const pagTxt = { cartao: 'cartão', boleto: 'boleto' };
-  $('#summaryList').innerHTML = T.I.map(i => {
-    let v, cls = 'vl';
-    if (i.pag === 'incl') { v = 'Incluso'; cls += ' incl'; }
-    else v = (i.mensal !== i.anualMes ? `${brl(i.mensal)} <small style="color:var(--muted);font-weight:500">· anual ${brl(i.anualMes)}</small>` : brl(i.mensal)) + '/mês';
-    return `<li><span class="nm"><b>${i.nome}</b><small>${i.sub}${pagTxt[i.pag] ? ' · ' + pagTxt[i.pag] : ''}</small></span><span class="${cls}">${v}</span></li>`;
-  }).join('');
-
-  // Como funciona a cobrança
   const notas = [];
-  if (T.nomesCartao.length) notas.push('<b>Cartão de crédito:</b> sistema e módulos, mês a mês no mensal ou em 12x no anual.');
-  if (state.crm === 'sim') notas.push(`<b>${T.nomesBoleto.join(' e ')}:</b> cobrança pós-paga, via boleto, na virada de cada mês. O CRM custa ${brl(CONFIG.crm.porUsuario)} por usuário, com mínimo de ${brl(CONFIG.crm.minimo)}/mês.`);
-  if (state.crm === 'sim' && state.ia === 'sim') notas.push(`<b>Agente de IA:</b> cada franquia de ${brl(CONFIG.ia.franquia)} atende até ${CONFIG.ia.leads} leads/mês. Se o volume passar, uma nova franquia é adicionada para atender o excedente.`);
-  if (state.assinatura === 'sim') notas.push(`<b>Assinatura Eletrônica:</b> além da mensalidade, existe o custo de ${brl(CONFIG.assinatura.porDocumento)} por documento finalizado, cobrado no mês seguinte.`);
-  if (franquiasVeiculos()) notas.push(`<b>Veículos adicionais:</b> ${brl(CONFIG.veiculosAdicionais.mensal)}/mês para cada franquia de ${CONFIG.veiculosAdicionais.franquia} veículos acima de 150.`);
-  if (T.cartao > 0) notas.push('<b>Desconto Platinum:</b> 50% na mensalidade do sistema (parte do cartão) para lojas que performam Platinum.');
-  $('#cobranca').innerHTML = `<b class="ct">Como funciona a cobrança</b><ul>${notas.map(n => `<li>${n}</li>`).join('')}</ul>`;
+  if (T.cartao) notas.push('<b>Cartão:</b> sistema e módulos — mês a mês ou 12x no anual.');
+  if (T.boleto) notas.push(`<b>Boleto:</b> ${T.nomesBoleto.join(' e ')} são pós-pagos, cobrados na virada do mês.`);
+  if (state.crm === 'sim') notas.push(`<b>CRM:</b> ${brl(CONFIG.crm.porUsuario)} por usuário, mínimo de ${brl(CONFIG.crm.minimo)}/mês.`);
+  const ia = T.I.find(i => i.nome === 'Agente de IA');
+  if (ia) notas.push(`<b>Agente de IA:</b> ${brl(CONFIG.ia.franquia)} a cada ${CONFIG.ia.leads} leads/mês (${plural(ia.franquias, 'franquia', 'franquias')} para você). Se passar, entra mais uma.`);
+  if (state.assinatura === 'sim') notas.push(`<b>Assinatura:</b> + ${brl(CONFIG.assinatura.porDocumento)} por documento finalizado, cobrado no mês seguinte.`);
+  if (franquiasVeiculos()) notas.push(`<b>Veículos adicionais:</b> ${brl(CONFIG.veiculosAdicionais.mensal)}/mês a cada ${CONFIG.veiculosAdicionais.franquia} veículos acima de 150.`);
+  if (T.cartao) notas.push('<b>Platinum:</b> 50% de desconto no sistema (cartão) para lojas que performam Platinum.');
+  $('#cobranca').innerHTML = notas.map(n => `<li>${n}</li>`).join('');
+
+  const anual = state.billing === 'anual';
+  $('#summaryList').innerHTML = T.I.map(i => `<li><div class="row"><b>${i.nome}</b>${i.pag === 'incl' ? '<span>incluso</span>' : `<span>${brl(anual ? i.anualMes : i.mensal)}/mês · ${i.pag === 'boleto' ? 'boleto' : 'cartão'}</span>`}</div></li>`).join('');
 
   $('#waBtn').disabled = !state.billing;
-  $('#waLabel').textContent = state.billing ? `Enviar meu plano ${state.billing} para ${CONSULTOR}` : 'Selecione mensal ou anual';
+  $('#waLabel').textContent = state.billing ? `Enviar para ${CONSULTOR}` : 'Escolha mensal ou anual';
 }
 // Próxima etapa (pulando as exclusivas de quem tem gestão, quando for o caso)
 function proximo(i) { let n = i + 1; while (pula(n)) n++; return n; }
@@ -1048,14 +606,13 @@ function canNext(id) {
 function update() {
   const id = STEPS[state.step].id;
   $$('.step').forEach(s => s.classList.toggle('active', s.dataset.step === id));
-  $$('.choices').forEach(c => {
+  $$('.choices[data-field]').forEach(c => {
     const f = c.dataset.field;
     c.querySelectorAll('.choice').forEach(b => b.classList.toggle('selected', state[f] === b.dataset.value));
   });
   const p = planoSel();
   $('#semGestaoNotice').classList.toggle('hidden', state.gestao !== 'nao');
   $('#finNaoNotice').classList.toggle('hidden', state.financeiro !== 'nao');
-  $('#finSimNotice').classList.toggle('hidden', state.financeiro !== 'sim');
   $('#tiersReveal').classList.toggle('hidden', !state.financeiro);
   $('#veicField').classList.toggle('hidden', !(p && p.ate === null));
   $('#crmReveal').classList.toggle('hidden', state.crm !== 'sim');
@@ -1067,21 +624,21 @@ function update() {
   const nextBtn = $(`.step[data-step="${id}"] [data-next]`);
   if (nextBtn) nextBtn.disabled = !canNext(id);
   if (id === 'resumo') renderResumo();
-  renderProgress(); renderValue(); renderSide();
+  renderProgress();
 }
 
 /* ---------- Toast ---------- */
 let toastT;
 function toast(msg) {
   if (!msg) return;
-  $('#toastText').textContent = msg;
+  $('#toast').textContent = msg;
   $('#toast').classList.add('show');
   clearTimeout(toastT);
-  toastT = setTimeout(() => $('#toast').classList.remove('show'), 2600);
+  toastT = setTimeout(() => $('#toast').classList.remove('show'), 2400);
 }
 
 /* ---------- Eventos ---------- */
-$$('.choices').forEach(c => c.addEventListener('click', e => {
+$$('.choices[data-field]').forEach(c => c.addEventListener('click', e => {
   const b = e.target.closest('.choice'); if (!b) return;
   const f = c.dataset.field, v = b.dataset.value;
   const changed = state[f] !== v;
@@ -1104,7 +661,7 @@ $('#usrMinus').onclick = () => { state.usuarios = Math.max(CONFIG.crm.minUsuario
 $('#usrPlus').onclick = () => { state.usuarios = Math.min(CONFIG.crm.maxUsuarios, state.usuarios + 1); update(); };
 
 function scrollToTop() {
-  const y = $('#montador').getBoundingClientRect().top + window.scrollY - 70;
+  const y = $('#montador').getBoundingClientRect().top + window.scrollY - 12;
   if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
 }
 function restart() {
@@ -1127,10 +684,11 @@ function buildMessage() {
   const nao = naoIncluidos();
   if (nao.length) msg += `\n\nNão incluí: ${nao.join(', ')}.`;
   msg += `\n\n*Formato escolhido: ${anual ? 'ANUAL' : 'MENSAL'}*\n`;
-  if (T.nomesCartao.length) msg += `💳 Cartão de crédito (${T.nomesCartao.join(' + ')}): ${anual ? `12x de ${brl(cartaoMes)}` : `${brl(cartaoMes)}/mês`}\n`;
+  if (T.cartao) msg += `💳 Cartão de crédito (${T.nomesCartao.join(' + ')}): ${anual ? `12x de ${brl(cartaoMes)}` : `${brl(cartaoMes)}/mês`}\n`;
   if (T.boleto) msg += `🧾 Boleto pós-pago (${T.nomesBoleto.join(' + ')}): ${brl(T.boleto)}/mês\n`;
   msg += `*Mensalidade total: ${brl(cartaoMes + T.boleto)}/mês*`;
   if (anual && T.economiaAno > 0) msg += `\n(economia de ${brl(T.economiaAno)} por ano no anual)`;
+  if (state.assinatura === 'sim') msg += `\n+ ${brl(CONFIG.assinatura.porDocumento)} por documento assinado, cobrado no mês seguinte.`;
   if (!anual && T.cartao > 0) msg += `\n\nTambém quero saber sobre o desconto de 50% para lojas que performam Platinum.`;
   msg += `\n\nQuero seguir com o plano nesse formato. Podemos avançar?`;
   return msg;
@@ -1145,9 +703,8 @@ function sendWhatsApp() {
 (function init() {
   $('#consultorNome').textContent = CONSULTOR;
   $('#consultorAv').textContent = CONSULTOR.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
-  if (LOJA_URL) { $('#lojaInput').value = LOJA_URL; $('#heroLoja').textContent = LOJA_URL; }
+  if (LOJA_URL) $('#lojaInput').value = LOJA_URL;
   $$('.fin-plan-label').forEach(e => e.textContent = CONFIG.planoMinimoFinanceiro);
-  $$('.ia-leads').forEach(e => e.textContent = CONFIG.ia.leads);
   update();
 })();
 </script>
