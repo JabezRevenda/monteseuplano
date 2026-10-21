@@ -1,0 +1,1080 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monte seu plano | Revenda Mais</title>
+<meta name="description" content="Atualize seu plano Revenda Mais: escolha os módulos ideais para a sua loja e veja o valor na hora.">
+<link rel="icon" href="https://revendamais.com.br/wp-content/uploads/2026/01/cropped-V1V_Favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Identidade visual Revenda Mais (cores do site oficial)
+   ========================================================= */
+:root{
+  --brand:#E22446;
+  --brand-dark:#B8143A;
+  --brand-deep:#8F0E2E;
+  --brand-shadow:rgba(226,36,70,.28);
+  --brand-soft:#FEF5F6;
+  --brand-soft-2:#FFE6E6;
+  --bg:#ffffff;
+  --bg-light:#fcfcfc;
+  --border:#ececec;
+  --border-strong:#e0e0e0;
+  --text:#212121;
+  --text-2:#444;
+  --muted:#777;
+  --success:#1f9d55;
+  --success-soft:#e8f6ee;
+  --warn:#b26a00;
+  --warn-soft:#fff6e5;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(17,17,17,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);background:var(--bg);line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit}
+
+/* ---------- Top bar + header ---------- */
+.topbar{background:#111;color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+.topbar b{background:var(--brand);padding:2px 10px;border-radius:999px;font-size:11px;letter-spacing:.04em;margin-right:8px;text-transform:uppercase}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:50}
+.header-in{max-width:1180px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{height:34px;width:auto}
+.logo-fallback{font-weight:800;font-size:24px;letter-spacing:-.02em;display:none}
+.logo-fallback span{color:var(--brand)}
+.consultor-chip{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)}
+.consultor-chip .av{width:34px;height:34px;border-radius:50%;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:700}
+.consultor-chip small{display:block;color:var(--muted);font-size:11px;line-height:1.1}
+
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(180deg,#fff 0%,var(--brand-soft) 100%);border-bottom:1px solid var(--border)}
+.hero-in{max-width:1180px;margin:0 auto;padding:44px 16px 36px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.hero h1{font-size:clamp(28px,4vw,42px);line-height:1.12;margin:10px 0 14px;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p{color:var(--text-2);font-size:16px;margin:0 0 22px;max-width:560px}
+.hero-img{border-radius:18px;overflow:hidden}
+.hero-points{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:13px;color:var(--text-2)}
+.hero-points span::before{content:"✓";color:var(--success);font-weight:800;margin-right:6px}
+
+.btn{border:0;border-radius:10px;padding:13px 22px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,box-shadow .15s,background .15s;text-decoration:none}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 20px var(--brand-shadow)}
+.btn-primary:hover{background:var(--brand-dark);transform:translateY(-1px)}
+.btn-primary:disabled{background:#e9a3b1;box-shadow:none;cursor:not-allowed;transform:none}
+.btn-ghost{background:#fff;color:var(--text);border:1px solid var(--border-strong)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+.btn-wa{background:#1fa855;color:#fff;box-shadow:0 8px 20px rgba(31,168,85,.28);font-size:16px;padding:15px 24px;width:100%}
+.btn-wa:hover{background:#178c46}
+.btn-wa:disabled{background:#9fd3b4;box-shadow:none;cursor:not-allowed}
+
+/* ---------- Progress ---------- */
+.progress-wrap{max-width:1180px;margin:0 auto;padding:26px 16px 0}
+.progress{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.progress li{flex:1;min-width:0}
+.progress .bar{height:6px;border-radius:999px;background:#eee;overflow:hidden}
+.progress .bar i{display:block;height:100%;width:0;background:var(--brand);transition:width .4s ease}
+.progress li.done .bar i,.progress li.current .bar i{width:100%}
+.progress li.current .bar i{background:linear-gradient(90deg,var(--brand),#ff6b86)}
+.progress .lbl{font-size:12px;color:var(--muted);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress li.current .lbl{color:var(--brand);font-weight:700}
+.progress li.done .lbl{color:var(--text-2)}
+
+/* ---------- Layout principal ---------- */
+.main{max-width:1180px;margin:0 auto;padding:22px 16px 120px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:28px;align-items:start}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.step{padding:30px;display:none;animation:fade .35s ease}
+.step.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.step-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+.step-icon{width:56px;height:56px;flex:0 0 56px;border-radius:14px;background:var(--brand-soft);display:grid;place-items:center;overflow:hidden}
+.step-icon img{width:40px;height:40px;object-fit:contain}
+.step-icon svg{width:28px;height:28px;color:var(--brand)}
+.step-kicker{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.step h2{font-size:clamp(21px,2.6vw,27px);line-height:1.2;margin:4px 0 6px;letter-spacing:-.01em}
+.step .lead{color:var(--text-2);margin:0}
+
+.benefits{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:20px 0 24px;padding:18px 20px;background:var(--bg-light);border:1px solid var(--border);border-radius:12px;list-style:none}
+.benefits li{font-size:14px;color:var(--text-2);display:flex;gap:9px;align-items:flex-start}
+.benefits li::before{content:"";flex:0 0 18px;height:18px;margin-top:2px;border-radius:5px;background:var(--success) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+
+.q{font-weight:700;font-size:17px;margin:4px 0 12px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice{position:relative;text-align:left;background:#fff;border:1.5px solid var(--border-strong);border-radius:12px;padding:16px 16px 16px 48px;font-size:15px;color:var(--text);transition:border-color .15s,background .15s,box-shadow .15s}
+.choice::before{content:"";position:absolute;left:16px;top:17px;width:20px;height:20px;border-radius:50%;border:2px solid #cfcfcf;background:#fff;transition:all .15s}
+.choice b{display:block;font-size:15px}
+.choice small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.choice:hover{border-color:var(--brand)}
+.choice.selected{border-color:var(--brand);background:var(--brand-soft);box-shadow:0 0 0 3px rgba(226,36,70,.08)}
+.choice.selected::before{border-color:var(--brand);background:radial-gradient(circle,var(--brand) 0 5px,#fff 6px)}
+
+.notice{display:flex;gap:12px;align-items:flex-start;border-radius:12px;padding:14px 16px;font-size:14px;margin-top:16px}
+.notice svg{flex:0 0 20px;width:20px;height:20px;margin-top:1px}
+.notice.info{background:var(--warn-soft);color:#6b4300;border:1px solid #f5dcae}
+.notice.ok{background:var(--success-soft);color:#155d35;border:1px solid #bfe5cf}
+.notice.brand{background:var(--brand-soft);color:var(--brand-deep);border:1px solid #f7cdd6}
+.hidden{display:none!important}
+
+.reveal{margin-top:24px;padding-top:22px;border-top:1px dashed var(--border-strong);animation:fade .35s ease}
+
+/* tiers de veículos */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:12px}
+.tier{position:relative;background:#fff;border:1.5px solid var(--border-strong);border-radius:12px;padding:18px 14px 14px;text-align:left;transition:all .15s;display:flex;flex-direction:column;gap:4px;min-height:140px}
+.tier:hover:not(:disabled){border-color:var(--brand)}
+.tier.selected{border-color:var(--brand);background:var(--brand-soft);box-shadow:0 0 0 3px rgba(226,36,70,.08)}
+.tier:disabled{opacity:.5;cursor:not-allowed;background:#fafafa}
+.tier .t-top{font-size:12px;color:var(--muted)}
+.tier .t-veh{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.tier .t-veh small{font-size:13px;font-weight:600;color:var(--muted)}
+.tier .t-price{font-weight:700;color:var(--brand);margin-top:auto}
+.tier .t-price small{color:var(--muted);font-weight:500}
+.tier .t-tag{font-size:11px;font-weight:700;border-radius:999px;padding:3px 8px;align-self:flex-start;margin-top:4px}
+.t-tag.fin{background:var(--success-soft);color:#155d35}
+.t-tag.nofin{background:#f1f1f1;color:#888}
+.tier .ribbon{position:absolute;top:-10px;right:10px;background:var(--brand);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:.03em}
+
+/* stepper usuários */
+.stepper-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--border-strong);border-radius:12px;overflow:hidden}
+.stepper button{width:48px;height:48px;border:0;background:#fff;font-size:22px;color:var(--brand);font-weight:700}
+.stepper button:hover{background:var(--brand-soft)}
+.stepper button:disabled{color:#ccc;background:#fff;cursor:not-allowed}
+.stepper output{min-width:64px;text-align:center;font-size:22px;font-weight:800}
+.users-info{font-size:14px;color:var(--text-2)}
+.users-info b{color:var(--text)}
+
+/* complementos (add-ons) */
+.addon{position:relative;display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1.5px dashed #f0b3c0;border-radius:12px;padding:16px;margin-top:14px;color:var(--text);transition:all .15s}
+.addon:hover{border-color:var(--brand)}
+.addon.selected{border-style:solid;border-color:var(--brand);background:var(--brand-soft);box-shadow:0 0 0 3px rgba(226,36,70,.08)}
+.addon .ck{flex:0 0 22px;height:22px;border-radius:6px;border:2px solid #cfcfcf;background:#fff;margin-top:2px;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:800;transition:all .15s}
+.addon.selected .ck{background:var(--brand);border-color:var(--brand)}
+.addon .a-body{flex:1;min-width:0}
+.addon .a-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);background:#fff;border:1px solid #f4cbd4;border-radius:999px;padding:2px 8px;margin-bottom:4px}
+.addon .a-name{display:block;font-weight:800;font-size:15px}
+.addon .a-desc{display:block;font-size:13px;color:var(--text-2);margin-top:2px}
+.addon .a-items{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;font-size:12px;color:var(--text-2)}
+.addon .a-items span::before{content:"✓";color:var(--success);font-weight:800;margin-right:5px}
+.addon .a-price{flex:0 0 auto;text-align:right;font-weight:800;color:var(--brand);white-space:nowrap}
+.addon .a-price small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.progress li.skipped .lbl{text-decoration:line-through;color:#bbb}
+.progress li.skipped .bar i{width:100%;background:#ddd}
+@media (max-width:640px){.addon{flex-wrap:wrap}.addon .a-price{width:100%;text-align:left;padding-left:36px}}
+
+.step-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
+.link-back{background:none;border:0;color:var(--muted);font-size:14px;font-weight:600;padding:8px 0}
+.link-back:hover{color:var(--brand)}
+
+/* ---------- Resultado ---------- */
+.summary-list{list-style:none;margin:18px 0 0;padding:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.summary-list li{display:flex;justify-content:space-between;gap:14px;padding:13px 16px;font-size:14px;border-bottom:1px solid var(--border)}
+.summary-list li:last-child{border-bottom:0}
+.summary-list .nm b{display:block;font-size:15px}
+.summary-list .nm small{color:var(--muted)}
+.summary-list .vl{font-weight:700;white-space:nowrap}
+.summary-list .vl.incl{color:var(--success)}
+.summary-list .vl.off{color:var(--muted);font-weight:500}
+
+.billing{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.bill{position:relative;text-align:left;border:1.5px solid var(--border-strong);border-radius:14px;padding:20px;background:#fff;transition:all .15s;display:flex;flex-direction:column;gap:6px}
+.bill:hover{border-color:var(--brand)}
+.bill.selected{border-color:var(--brand);box-shadow:0 0 0 3px rgba(226,36,70,.1)}
+.bill .b-name{font-weight:800;font-size:16px;display:flex;align-items:center;gap:10px}
+.bill .b-name::before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid #cfcfcf;flex:0 0 18px}
+.bill.selected .b-name::before{border-color:var(--brand);background:radial-gradient(circle,var(--brand) 0 4px,#fff 5px)}
+.bill .b-price{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:6px}
+.bill .b-price small{font-size:14px;color:var(--muted);font-weight:600}
+.bill .b-sub{font-size:13px;color:var(--text-2)}
+.bill .b-badge{position:absolute;top:-11px;right:14px;background:var(--brand);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px}
+.platinum{margin-top:10px;border-radius:12px;padding:12px 14px;background:linear-gradient(135deg,#23262d,#3d424d);color:#fff;font-size:13px}
+.platinum .pl-top{display:flex;align-items:center;gap:8px;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#e7e9ee}
+.platinum .pl-top i{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#f4f6fa,#a9b0bd);display:inline-block}
+.platinum .pl-val{font-size:20px;font-weight:800;margin-top:4px}
+.platinum .pl-val s{font-size:13px;font-weight:500;color:#b8bec9;margin-left:6px}
+.platinum p{margin:2px 0 0;color:#d5d9e0;font-size:12px}
+.save{display:inline-block;background:var(--success-soft);color:#155d35;font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px;align-self:flex-start;margin-top:4px}
+
+.field{margin-top:22px}
+.field label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.field input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--border-strong);border-radius:10px;outline:none}
+.field input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(226,36,70,.1)}
+.wa-box{margin-top:22px}
+.wa-note{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+
+/* ---------- Painel lateral ---------- */
+.side{position:sticky;top:84px;display:flex;flex-direction:column;gap:16px}
+.plan-box{padding:20px}
+.plan-box h3{margin:0 0 4px;font-size:16px}
+.plan-box .pb-sub{font-size:13px;color:var(--muted);margin:0 0 14px}
+.pb-lines{list-style:none;margin:0;padding:0;font-size:14px}
+.pb-lines li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border)}
+.pb-lines li:last-child{border-bottom:0}
+.pb-lines li.empty{color:var(--muted);justify-content:center;border:0;padding:14px 0;text-align:center}
+.pb-lines .pv{font-weight:700;white-space:nowrap}
+.pb-lines .pv.incl{color:var(--success)}
+.pb-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:12px;border-top:2px solid var(--text)}
+.pb-total span{font-weight:700}
+.pb-total b{font-size:24px;letter-spacing:-.02em;color:var(--brand)}
+.pb-total b small{font-size:13px;color:var(--muted);font-weight:600}
+.pb-foot{font-size:12px;color:var(--muted);margin-top:6px}
+
+.value-box{padding:20px;background:linear-gradient(160deg,#fff 0%,var(--brand-soft) 100%)}
+.value-box .vb-kicker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--brand)}
+.value-box h4{margin:4px 0 12px;font-size:17px;line-height:1.25}
+.value-box ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.value-box li{display:flex;gap:12px;font-size:13.5px;color:var(--text-2)}
+.value-box li .ic{flex:0 0 34px;height:34px;border-radius:10px;background:#fff;border:1px solid #f4d3da;display:grid;place-items:center}
+.value-box li .ic svg{width:18px;height:18px;color:var(--brand)}
+.value-box li b{display:block;color:var(--text);font-size:14px}
+.quote{margin-top:14px;padding:14px;border-radius:12px;background:#fff;border:1px solid var(--border);font-size:13px;color:var(--text-2)}
+.quote .stars{color:#f5b301;letter-spacing:2px;font-size:13px}
+.quote cite{display:block;margin-top:6px;font-style:normal;font-weight:700;color:var(--text);font-size:12px}
+
+.google{display:flex;align-items:center;gap:12px;padding:14px 18px}
+.google .g-score{font-weight:800;font-size:13px;letter-spacing:.04em}
+.google .stars{color:#f5b301;letter-spacing:2px}
+.google small{color:var(--muted);font-size:12px;display:block}
+
+/* Toast agregador de valor */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#111;color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:0 14px 30px rgba(0,0,0,.25);transition:all .35s ease;z-index:100;display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast i{width:22px;height:22px;border-radius:50%;background:var(--success);display:grid;place-items:center;font-style:normal;font-size:12px;flex:0 0 22px}
+
+/* Barra inferior mobile */
+.mobile-bar{display:none}
+
+/* ---------- Faixa "Todos os planos contam com" ---------- */
+.allplans{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;margin-top:20px}
+.allplans-in{max-width:1180px;margin:0 auto;padding:46px 16px}
+.allplans h3{text-align:center;font-size:clamp(22px,3vw,30px);margin:0 0 6px}
+.allplans .sub{text-align:center;opacity:.85;margin:0 0 28px}
+.allplans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.allplans-grid div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:18px}
+.allplans-grid b{display:block;margin-bottom:4px}
+.allplans-grid p{margin:0;font-size:13.5px;opacity:.9}
+footer.site{text-align:center;font-size:12px;color:var(--muted);padding:22px 16px 90px}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:980px){
+  .main{grid-template-columns:1fr}
+  .side{position:static}
+  .plan-box{display:none}
+  .hero-in{grid-template-columns:1fr}
+  .hero-img{display:none}
+  .tiers{grid-template-columns:1fr 1fr}
+  .mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--brand-soft-2);border-top:1px solid #f4c9d2;padding:10px 16px;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -4px 14px rgba(0,0,0,.06)}
+  .mobile-bar span{font-size:12px;color:var(--text-2);display:block}
+  .mobile-bar b{font-size:20px;color:var(--brand)}
+  .mobile-bar b small{font-size:12px;color:var(--muted)}
+  .toast{bottom:84px}
+  .allplans-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .step{padding:22px 18px}
+  .benefits,.choices,.billing{grid-template-columns:1fr}
+  .progress .lbl{display:none}
+  .allplans-grid{grid-template-columns:1fr}
+  .consultor-chip .txt{display:none}
+  .logo{height:28px}
+  .step-head{gap:12px}
+  .step-icon{width:46px;height:46px;flex-basis:46px}
+}
+
+/* ---------- Resultado: inclusos + cartão/boleto ---------- */
+.incl-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.incl{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--bg-light)}
+.incl .i-ck{flex:0 0 26px;height:26px;border-radius:8px;background:var(--success);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+.incl b{display:block;font-size:14.5px}
+.incl small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:1px}
+.incl.always{background:#fff;border-style:dashed}
+.incl.always .i-ck{background:var(--brand)}
+.price-head{margin-top:30px;padding-top:24px;border-top:1px solid var(--border)}
+.price-head p{margin:4px 0 0;color:var(--text-2);font-size:14px}
+.bill .b-lbl{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
+.bill .b-price{margin-top:0}
+.bill .b-day{font-size:12.5px;color:var(--text-2)}
+.split{margin-top:10px;border-top:1px dashed var(--border-strong);padding-top:10px;display:flex;flex-direction:column;gap:9px}
+.split-row{display:flex;gap:10px;align-items:flex-start;font-size:13px}
+.split-row .sp-ic{flex:0 0 28px;height:28px;border-radius:8px;display:grid;place-items:center}
+.split-row .sp-ic svg{width:16px;height:16px}
+.sp-ic.card{background:#eef3ff;color:#2f5bd3}
+.sp-ic.boleto{background:#fff4e0;color:#a35f00}
+.split-row .sp-t{flex:1;min-width:0}
+.split-row .sp-t b{display:block;font-size:13px}
+.split-row .sp-t small{display:block;color:var(--muted);font-size:11.5px;line-height:1.3}
+.split-row .sp-v{font-weight:800;white-space:nowrap;font-size:14px}
+.split-row .sp-v small{font-weight:600;color:var(--muted);font-size:11px}
+.bill.only{grid-column:1/-1}
+.detalhe{margin-top:16px;border:1px solid var(--border);border-radius:12px;padding:0 16px;background:#fff}
+.detalhe summary{cursor:pointer;padding:13px 0;font-weight:700;font-size:14px;color:var(--text-2);list-style:none}
+.detalhe summary::-webkit-details-marker{display:none}
+.detalhe summary::after{content:"＋";float:right;color:var(--brand)}
+.detalhe[open] summary::after{content:"－"}
+.detalhe .summary-list{margin:0 0 14px}
+.cobranca{margin-top:16px;padding:16px 18px;border-radius:12px;background:var(--bg-light);border:1px solid var(--border);font-size:13px;color:var(--text-2)}
+.cobranca b.ct{display:block;color:var(--text);font-size:14px;margin-bottom:6px}
+.cobranca ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.pb-lines li .pk{color:var(--success);font-weight:800;margin-right:6px}
+@media (max-width:640px){.incl-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><b>Novo</b> Seu plano Revenda Mais está sendo atualizado para a linha de planos atual.</div>
+
+<header class="site">
+  <div class="header-in">
+    <a href="https://revendamais.com.br/" target="_blank" rel="noopener" aria-label="Revenda Mais">
+      <img class="logo" src="https://revendamais.com.br/wp-content/uploads/2023/09/revendamaiswm-hor.png" alt="Revenda Mais — uma empresa Webmotors"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-fallback">revenda<span>mais</span></span>
+    </a>
+    <div class="consultor-chip" id="consultorChip">
+      <div class="txt" style="text-align:right"><small>Seu consultor</small><b id="consultorNome">Time Comercial</b></div>
+      <div class="av" id="consultorAv">RM</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="eyebrow">Atualização de plano · <span id="heroLoja">Revenda Mais</span></div>
+      <h1>Monte o <em>plano ideal</em> para a sua loja em poucos passos.</h1>
+      <p>Estamos atualizando os planos antigos para a nossa linha atual. Escolha módulo a módulo o que faz sentido para a sua operação. No final, você vê quanto fica — no mensal e no anual.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('montador').scrollIntoView({behavior:'smooth'})">Começar agora →</button>
+      <div class="hero-points"><span>Leva menos de 2 minutos</span><span>Valores transparentes</span><span>Envio direto ao seu consultor</span></div>
+    </div>
+    <div class="hero-img">
+      <img src="https://revendamais.com.br/wp-content/uploads/2023/10/composicao-768x768.png" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<div class="progress-wrap" id="montador">
+  <ol class="progress" id="progress"></ol>
+</div>
+
+<main class="main">
+  <section class="card" aria-live="polite">
+
+    <!-- ETAPA 1: SISTEMA DE GESTÃO -->
+    <div class="step" data-step="gestao">
+      <div class="step-head">
+        <div class="step-icon"><img src="https://revendamais.com.br/wp-content/uploads/2024/06/integracao.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'⚙️'}))"></div>
+        <div>
+          <div class="step-kicker">Etapa 1 · Sistema de Gestão</div>
+          <h2>Você deseja ter o Sistema de Gestão Revenda Mais?</h2>
+          <p class="lead">O coração da sua loja: estoque, vendas, documentos e relatórios em um só lugar.</p>
+        </div>
+      </div>
+      <ul class="benefits">
+        <li>Gestão completa do estoque</li>
+        <li>Cadastro fácil pela placa</li>
+        <li>Integrador para portais de anúncio</li>
+        <li>Módulo de avaliação do veículo</li>
+        <li>Geração de contratos</li>
+        <li>Controle de despachante</li>
+        <li>Controle de comissões</li>
+        <li>Sinal de negócio e refinanciamentos</li>
+        <li>Guarda de arquivos (DUT, CNH, contratos)</li>
+        <li>Relatórios gerenciais</li>
+      </ul>
+      <div class="q">Deseja incluir o Sistema de Gestão no seu plano?</div>
+      <div class="choices" data-field="gestao">
+        <button class="choice" data-value="sim"><b>Sim, quero o Sistema de Gestão</b><small>Recomendado para organizar toda a loja</small></button>
+        <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Quero só CRM e/ou Nota Fiscal</small></button>
+      </div>
+      <div class="reveal hidden" id="gestaoReveal">
+        <div class="q">Complemento exclusivo para quem tem o Sistema de Gestão</div>
+        <div class="addon-slot" data-addon="assinatura"></div>
+      </div>
+      <div class="notice info hidden" id="semGestaoNotice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <div><b>Sem problema!</b> Você pode contratar só o CRM, só a Nota Fiscal ou os dois juntos. Só para saber: o módulo financeiro e a Assinatura Eletrônica são exclusivos de quem tem o Sistema de Gestão.</div>
+      </div>
+      <div class="step-actions">
+        <span></span>
+        <button class="btn btn-primary" data-next disabled>Continuar →</button>
+      </div>
+    </div>
+
+    <!-- ETAPA 2: FINANCEIRO + VEÍCULOS -->
+    <div class="step" data-step="financeiro">
+      <div class="step-head">
+        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <div>
+          <div class="step-kicker">Etapa 2 · Financeiro e estoque</div>
+          <h2>Deseja o módulo financeiro?</h2>
+          <p class="lead">Saiba exatamente quanto entra, quanto sai e quanto sobra na sua loja.</p>
+        </div>
+      </div>
+      <ul class="benefits">
+        <li>Gestão financeira da loja</li>
+        <li>Contas a pagar e a receber</li>
+        <li>Conciliação bancária</li>
+        <li>Saldo disponível sempre atualizado</li>
+      </ul>
+      <div class="q">Você quer o módulo financeiro no seu plano?</div>
+      <div class="choices" data-field="financeiro">
+        <button class="choice" data-value="sim"><b>Sim, quero o financeiro</b><small>Disponível a partir do <span class="fin-plan-label">Plano 1.0</span></small></button>
+        <button class="choice" data-value="nao"><b>Não, por enquanto</b><small>Posso incluir depois</small></button>
+      </div>
+      <div class="notice info hidden" id="finNaoNotice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <div>Sem problema! Só para você saber: <b>o módulo financeiro está disponível a partir do <span class="fin-plan-label">Plano 1.0</span></b> (até <span class="fin-min-veh">50</span> veículos). Se escolher um desses planos, ele já vem incluso.</div>
+      </div>
+      <div class="notice ok hidden" id="finSimNotice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <div>Ótima escolha! O financeiro vem <b>incluso</b> nos planos a partir do <span class="fin-plan-label">Plano 1.0</span>. Agora escolha o tamanho do seu estoque.</div>
+      </div>
+
+      <div class="reveal hidden" id="tiersReveal">
+        <div class="q">Quantos veículos você tem no estoque?</div>
+        <div class="tiers" id="tiers"></div>
+        <div class="notice brand hidden" id="customNotice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z"/></svg>
+          <div><b>Plano personalizado para lojas com mais de 150 veículos.</b><br>Seguimos montando os módulos e, no final, seu consultor envia o valor sob medida para a sua operação.</div>
+        </div>
+      </div>
+
+      <div class="step-actions">
+        <button class="link-back" data-back>← Voltar</button>
+        <button class="btn btn-primary" data-next disabled>Continuar →</button>
+      </div>
+    </div>
+
+    <!-- ETAPA 3: CRM -->
+    <div class="step" data-step="crm">
+      <div class="step-head">
+        <div class="step-icon"><img src="https://revendamais.com.br/wp-content/uploads/2024/06/crm.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'💬'}))"></div>
+        <div>
+          <div class="step-kicker">Etapa 3 · CRM e gestão de leads</div>
+          <h2>Deseja o CRM com WhatsApp para gestão de leads?</h2>
+          <p class="lead">Centralize os leads dos portais, responda mais rápido e acompanhe cada venda.</p>
+        </div>
+      </div>
+      <ul class="benefits">
+        <li>Integração com a API Oficial do WhatsApp</li>
+        <li>Captura automática de leads dos portais</li>
+        <li>Funil de vendas em Kanban</li>
+        <li>Registro de tarefas e follow-ups</li>
+        <li>Histórico completo das interações</li>
+        <li>Dashboard de indicadores</li>
+      </ul>
+      <div class="q">Você quer o CRM no seu plano?</div>
+      <div class="choices" data-field="crm">
+        <button class="choice" data-value="sim"><b>Sim, quero o CRM</b><small><span class="crm-incl"></span> usuários já inclusos</small></button>
+        <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Sigo sem o CRM por enquanto</small></button>
+      </div>
+      <div class="reveal hidden" id="crmReveal">
+        <div class="q">Quantos usuários vão usar o CRM?</div>
+        <div class="stepper-row">
+          <div class="stepper">
+            <button type="button" id="usrMinus" aria-label="Menos usuários">−</button>
+            <output id="usrCount">3</output>
+            <button type="button" id="usrPlus" aria-label="Mais usuários">+</button>
+          </div>
+          <div class="users-info" id="usersInfo"></div>
+        </div>
+        <div class="q" style="margin-top:24px">Complemento exclusivo para quem tem o CRM</div>
+        <div class="addon-slot" data-addon="sdr"></div>
+      </div>
+      <div class="step-actions">
+        <button class="link-back" data-back>← Voltar</button>
+        <button class="btn btn-primary" data-next disabled>Continuar →</button>
+      </div>
+    </div>
+
+    <!-- ETAPA 4: NOTA FISCAL -->
+    <div class="step" data-step="nf">
+      <div class="step-head">
+        <div class="step-icon"><img src="https://revendamais.com.br/wp-content/uploads/2024/06/nfe.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'🧾'}))"></div>
+        <div>
+          <div class="step-kicker">Etapa 4 · Emissor de NF-e</div>
+          <h2>Deseja emitir notas fiscais de produto pelo sistema?</h2>
+          <p class="lead">Emita a NF-e de entrada e saída dos veículos sem sair do Revenda Mais.</p>
+        </div>
+      </div>
+      <div class="notice brand" style="margin-top:0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <div><b>Importante:</b> o emissor é de <b>nota fiscal de produto (NF-e)</b>. Ele <b>não emite nota fiscal de serviço (NFS-e)</b>.</div>
+      </div>
+      <ul class="benefits">
+        <li>Cálculo automático de impostos</li>
+        <li>Envio automático à SEFAZ</li>
+        <li>Cancelamento e carta de correção</li>
+        <li>Armazenamento de XML e DANFE</li>
+        <li>Exportação de XML para a contabilidade</li>
+        <li>Consulta de status da nota</li>
+      </ul>
+      <div class="q">Você quer o Emissor de NF-e no seu plano?</div>
+      <div class="choices" data-field="nf">
+        <button class="choice" data-value="sim"><b>Sim, quero emitir NF-e</b><small>Notas de entrada e saída de veículos</small></button>
+        <button class="choice" data-value="nao"><b>Não, obrigado</b><small>Sigo sem o emissor</small></button>
+      </div>
+      <div class="reveal hidden" id="nfReveal">
+        <div class="q">Complemento exclusivo para quem tem a Nota Fiscal</div>
+        <div class="addon-slot" data-addon="renave"></div>
+      </div>
+      <div class="notice info hidden" id="nadaNotice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <div>Escolha pelo menos um produto (Sistema de Gestão, CRM ou Nota Fiscal) para montar o seu plano. Use “Voltar” para revisar as etapas.</div>
+      </div>
+      <div class="step-actions">
+        <button class="link-back" data-back>← Voltar</button>
+        <button class="btn btn-primary" data-next disabled>Ver meu plano →</button>
+      </div>
+    </div>
+
+    <!-- ETAPA 5: RESULTADO — único lugar onde aparecem valores -->
+    <div class="step" data-step="resumo">
+      <div class="step-head">
+        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div>
+          <div class="step-kicker">Etapa 5 · Seu novo plano</div>
+          <h2>Pronto! Seu plano Revenda Mais está montado.</h2>
+          <p class="lead">Primeiro, tudo o que a sua loja vai ter. Logo abaixo, quanto fica — no mensal e no anual.</p>
+        </div>
+      </div>
+
+      <div class="q">O que está no seu plano</div>
+      <div class="incl-grid" id="inclGrid"></div>
+
+      <div class="price-head">
+        <div class="q" style="margin:0">Quanto fica o seu plano</div>
+        <p>Escolha o formato que prefere manter. Os valores já mostram o que vai no cartão e o que vai no boleto.</p>
+      </div>
+      <div class="billing" id="billing"></div>
+
+      <details class="detalhe">
+        <summary>Ver detalhamento por módulo</summary>
+        <ul class="summary-list" id="summaryList"></ul>
+      </details>
+
+      <div class="cobranca" id="cobranca"></div>
+
+      <div class="field" id="lojaField">
+        <label for="lojaInput">Nome da sua loja</label>
+        <input id="lojaInput" type="text" placeholder="Ex.: Federal Car" autocomplete="organization">
+      </div>
+
+      <div class="wa-box">
+        <button class="btn btn-wa" id="waBtn" disabled onclick="sendWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          <span id="waLabel">Selecione mensal ou anual</span>
+        </button>
+        <div class="wa-note">Você será direcionado ao WhatsApp do seu consultor com o resumo do plano já preenchido.</div>
+      </div>
+
+      <div class="step-actions">
+        <button class="link-back" data-back>← Voltar e ajustar</button>
+        <button class="link-back" onclick="restart()">Recomeçar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Painel lateral -->
+  <aside class="side">
+    <div class="card plan-box">
+      <h3>Seu plano até agora</h3>
+      <p class="pb-sub">Atualiza a cada escolha</p>
+      <ul class="pb-lines" id="pbLines"></ul>
+      <div class="pb-foot">💡 Os valores aparecem no final, com mensal e anual lado a lado.</div>
+    </div>
+
+    <div class="card value-box" id="valueBox"></div>
+
+    <div class="card google">
+      <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+      <div><span class="g-score">EXCELENTE</span> <span class="stars">★★★★★</span><small>Com base em 1.585 avaliações no Google</small></div>
+    </div>
+  </aside>
+</main>
+
+<section class="allplans">
+  <div class="allplans-in">
+    <h3>Todos os planos contam com</h3>
+    <p class="sub">Mais de 5.000 lojas de veículos confiam no Revenda Mais todos os dias.</p>
+    <div class="allplans-grid">
+      <div><b>Logs de acesso</b><p>Acompanhe as ações de cada usuário com mais controle, transparência e segurança.</p></div>
+      <div><b>Segurança de dados</b><p>Login e senha exclusivos por usuário e dados protegidos com criptografia.</p></div>
+      <div><b>Backup em 3 lugares diferentes</b><p>Backup diário redundante em três locais distintos, para nunca perder nada.</p></div>
+      <div><b>Guarda de arquivos</b><p>DUT, CNH, contratos e documentos organizados e fáceis de encontrar.</p></div>
+      <div><b>Servidores Amazon AWS</b><p>Plataforma líder em segurança e desempenho, disponível o tempo todo.</p></div>
+      <div><b>Suporte por chamado e chat</b><p>Da implantação ao dia a dia, com tempo médio de atendimento abaixo de 2 minutos.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">Revenda Mais · Uma empresa Webmotors · Valores sujeitos à confirmação do seu consultor comercial.</footer>
+
+<div class="mobile-bar" id="mobileBar">
+  <div><span>Seu plano</span><b id="mbCount">Nenhum módulo ainda</b></div>
+  <button class="btn btn-primary" style="padding:10px 16px;font-size:14px" onclick="document.getElementById('montador').scrollIntoView({behavior:'smooth'})">Ver etapas</button>
+</div>
+
+<div class="toast" id="toast"><i>✓</i><span id="toastText"></span></div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — ajuste aqui preços, regras e contatos.
+   Mesma tabela do Gerador de Proposta Revenda Mais.
+   ========================================================= */
+const CONFIG = {
+  // WhatsApp padrão do comercial (DDI+DDD+número, só dígitos).
+  // Cada consultor pode mandar o próprio link com ?wa=5511999999999&consultor=Nome&loja=Loja
+  whatsappPadrao: '',
+  consultorPadrao: 'Time Comercial',
+
+  // Sistema de Gestão por tamanho de estoque — cobrado no cartão
+  planos: [
+    { id: 'p05',  nome: 'Plano 0.5', veiculos: 25,  preco: 600,  financeiro: false, destaque: 'Melhor custo-benefício' },
+    { id: 'p10',  nome: 'Plano 1.0', veiculos: 50,  preco: 800,  financeiro: true,  destaque: 'Mais popular' },
+    { id: 'p20',  nome: 'Plano 2.0', veiculos: 100, preco: 1000, financeiro: true,  destaque: 'Ideal para grandes lojas' },
+    { id: 'p30',  nome: 'Plano 3.0', veiculos: 150, preco: 1300, financeiro: true,  destaque: 'Para operações maiores' },
+    { id: 'pmais',nome: 'Plano personalizado', veiculos: null, acima: 150, preco: null, financeiro: true, destaque: 'Sob medida para a sua loja' }
+  ],
+  planoMinimoFinanceiro: 'Plano 1.0',
+  descontoAnualPlano: 50,     // no anual, o plano de gestão fica R$ 50/mês abaixo do mensal
+
+  // CRM e IA SDR: pós-pagos, cobrados via boleto na virada de cada mês (fora do cartão)
+  crm: { preco: 500, usuariosInclusos: 3, precoUsuarioExtra: 100, maxUsuarios: 50 },
+  nf:  { preco: 400, precoAnual: 350 },
+
+  // Complementos: cada um só aparece se o produto "requer" estiver contratado
+  addons: {
+    assinatura: {
+      requer: 'gestao', nome: 'Assinatura Eletrônica', preco: 100, boleto: false,
+      desc: 'Assine contratos digitalmente, sem o cliente precisar ir à loja.',
+      itens: ['Validade jurídica', 'Envio por WhatsApp, SMS ou e-mail', 'Contratos guardados no sistema']
+    },
+    sdr: {
+      requer: 'crm', nome: 'IA SDR', preco: 996, boleto: true, leads: 500, excedente: 5,
+      desc: 'Atende e qualifica seus leads no WhatsApp em segundos e entrega ao vendedor só quem realmente quer comprar.',
+      itens: ['Resposta em segundos', 'Qualificação automática', 'Integrada ao seu CRM', 'Sem fidelidade']
+    },
+    renave: {
+      requer: 'nf', nome: 'Conexão RENAVE', preco: 30, boleto: false,
+      desc: 'Integração das transferências dos veículos da sua loja com o RENAVE, direto do sistema.',
+      itens: ['RENAVE obrigatório: fique em dia', 'Menos retrabalho nas transferências']
+    }
+  },
+
+  descontoPlatinum: 0.5       // 50% de desconto na mensalidade do sistema (parte do cartão) para quem performar Platinum
+};
+
+/* ========================================================= */
+const params = new URLSearchParams(location.search);
+const WA = (params.get('wa') || CONFIG.whatsappPadrao || '').replace(/\D/g, '');
+const CONSULTOR = params.get('consultor') || CONFIG.consultorPadrao;
+const LOJA_URL = params.get('loja') || '';
+
+const brl = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+
+const STEPS = [
+  { id: 'gestao',     label: 'Gestão' },
+  { id: 'financeiro', label: 'Financeiro e estoque' },
+  { id: 'crm',        label: 'CRM' },
+  { id: 'nf',         label: 'Nota fiscal' },
+  { id: 'resumo',     label: 'Seu plano' }
+];
+
+const initialState = () => ({ step: 0, gestao: null, financeiro: null, plano: null, crm: null, usuarios: CONFIG.crm.usuariosInclusos, nf: null, billing: null, addons: { assinatura: false, sdr: false, renave: false } });
+const state = initialState();
+
+/* ---------- Conteúdo de "agregadores de valor" por etapa ---------- */
+const IC = {
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+  bolt:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg>',
+  chart:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>',
+  users:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>',
+  chat:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+  doc:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>',
+  cloud:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
+  clock:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+  car:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M6 17v2M18 17v2M3 13l2-6h14l2 6v4H3z"/><circle cx="7.5" cy="14" r="1"/><circle cx="16.5" cy="14" r="1"/></svg>',
+  card:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>',
+  boleto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v16M7 4v16M10 4v16M14 4v16M16 4v16M20 4v16"/></svg>'
+};
+const VALUE = {
+  gestao: {
+    kicker: 'Por que vale a pena', title: 'Tudo da sua loja em um só lugar',
+    items: [
+      [IC.car, 'Cadastro pela placa', 'Menos digitação e menos erro na entrada do veículo.'],
+      [IC.bolt, 'Anúncios integrados', 'Publique nos principais portais a partir do próprio estoque.'],
+      [IC.shield, 'Dados seguros na AWS', 'Backup diário em 3 lugares diferentes.']
+    ],
+    quote: ['O sistema é completo, estável e contribui diretamente para a organização dos processos e para a produtividade da equipe.', 'Cristiano Ferreira · Google']
+  },
+  financeiro: {
+    kicker: 'O que o financeiro resolve', title: 'Decisões com base no seu caixa real',
+    items: [
+      [IC.chart, 'Saldo sempre claro', 'Saber exatamente quanto de saldo está disponível é essencial para a saúde da loja.'],
+      [IC.doc, 'Conciliação bancária', 'Compare o sistema com o extrato e encontre diferenças rápido.'],
+      [IC.users, 'Comissões sob controle', 'Acompanhe o que é devido a cada vendedor.']
+    ]
+  },
+  crm: {
+    kicker: 'O que o CRM entrega', title: 'Mais leads atendidos, mais vendas fechadas',
+    items: [
+      [IC.chat, 'API Oficial do WhatsApp', 'Atenda clientes sem risco de bloqueio do número.'],
+      [IC.bolt, 'Leads dos portais no funil', 'Os contatos caem direto no Kanban, sem copiar e colar.'],
+      [IC.chart, 'Dashboard de indicadores', 'Veja quem atende, quanto converte e onde melhorar.']
+    ]
+  },
+  nf: {
+    kicker: 'O que o emissor facilita', title: 'NF-e emitida em minutos, sem erro',
+    items: [
+      [IC.doc, 'Impostos calculados', 'Cálculo automático e envio direto à SEFAZ.'],
+      [IC.cloud, 'XML e DANFE guardados', 'Acesse suas notas de onde estiver.'],
+      [IC.users, 'Integração com a contabilidade', 'Seu contador acessa e exporta as notas com facilidade.']
+    ]
+  },
+  resumo: {
+    kicker: 'Você está em boas mãos', title: 'Incluso em todos os planos',
+    items: [
+      [IC.clock, 'Suporte em menos de 2 min', 'Tempo médio de atendimento por chamado e chat.'],
+      [IC.shield, 'Backup em 3 lugares', 'Redundância diária para nunca perder dados.'],
+      [IC.cloud, 'Servidores Amazon AWS', 'Segurança e disponibilidade o tempo todo.']
+    ],
+    quote: ['Foi sensacional, parabéns à equipe!', 'Roma Veículos · Google']
+  }
+};
+
+const TOASTS = {
+  gestao_sim: 'Sistema de Gestão adicionado: estoque, contratos e relatórios',
+  financeiro_sim: 'Financeiro: controle total do caixa da loja',
+  crm_sim: 'CRM adicionado: leads dos portais direto no seu WhatsApp',
+  nf_sim: 'Emissor de NF-e adicionado: notas em minutos',
+  addon_assinatura: 'Assinatura Eletrônica: contratos assinados sem o cliente ir à loja',
+  addon_sdr: 'IA SDR: seus leads qualificados em segundos',
+  addon_renave: 'Conexão RENAVE: transferências direto do sistema'
+};
+
+/* ---------- Cálculos ---------- */
+function planoSel() { return CONFIG.planos.find(p => p.id === state.plano) || null; }
+const planoLabel = p => p.veiculos ? `até ${p.veiculos} veículos` : `mais de ${p.acima} veículos`;
+function usuariosExtras() { return Math.max(0, state.usuarios - CONFIG.crm.usuariosInclusos); }
+const crmValor = () => CONFIG.crm.preco + usuariosExtras() * CONFIG.crm.precoUsuarioExtra;
+// complemento só conta se o produto do qual ele depende estiver contratado
+const addonAtivo = k => state.addons[k] && state[CONFIG.addons[k].requer] === 'sim';
+const algumProduto = () => state.gestao === 'sim' || state.crm === 'sim' || state.nf === 'sim';
+const pulaFinanceiro = () => state.gestao === 'nao';
+
+// Itens contratados. pag: 'cartao' | 'boleto' | 'incl'. mensal / anualMes = valor por mês em cada formato.
+function itens() {
+  const I = [];
+  const p = planoSel();
+  const addon = k => {
+    if (!addonAtivo(k)) return;
+    const a = CONFIG.addons[k];
+    I.push({ key: k, nome: a.nome, sub: k === 'sdr' ? `até ${a.leads} leads/mês` : 'complemento', beneficio: a.desc,
+      pag: a.boleto ? 'boleto' : 'cartao', mensal: a.preco, anualMes: a.preco });
+  };
+  if (state.gestao === 'sim') {
+    I.push({ key: 'gestao', nome: 'Sistema de Gestão', sub: p ? `${p.nome} · ${planoLabel(p)}` : 'escolha o estoque',
+      beneficio: 'Estoque, contratos, documentos e relatórios', pag: 'cartao',
+      mensal: p ? p.preco : null, anualMes: p && p.preco ? p.preco - CONFIG.descontoAnualPlano : null, sob: !!(p && p.preco === null) });
+    if (p && p.financeiro) I.push({ key: 'fin', nome: 'Módulo financeiro', sub: 'incluso no plano', beneficio: 'Contas, conciliação bancária e saldo sempre claro', pag: 'incl' });
+    addon('assinatura');
+  }
+  if (state.crm === 'sim') {
+    const ex = usuariosExtras();
+    I.push({ key: 'crm', nome: 'CRM com WhatsApp', sub: `${state.usuarios} usuário${state.usuarios > 1 ? 's' : ''}${ex ? ` · ${CONFIG.crm.usuariosInclusos} inclusos + ${ex} adicional${ex > 1 ? 'is' : ''}`.replace('adicionalis', 'adicionais') : ''}`,
+      beneficio: 'Leads dos portais no WhatsApp oficial, em Kanban', pag: 'boleto', mensal: crmValor(), anualMes: crmValor() });
+    addon('sdr');
+  }
+  if (state.nf === 'sim') {
+    I.push({ key: 'nf', nome: 'Emissor de NF-e', sub: 'nota fiscal de produto', beneficio: 'Notas de produto com impostos calculados',
+      pag: 'cartao', mensal: CONFIG.nf.preco, anualMes: CONFIG.nf.precoAnual });
+    addon('renave');
+  }
+  return I;
+}
+function naoIncluidos() {
+  const N = [];
+  if (state.gestao === 'nao') N.push('Sistema de Gestão');
+  const p = planoSel();
+  if (state.gestao === 'sim' && p && !p.financeiro) N.push('Financeiro');
+  if (state.crm === 'nao') N.push('CRM');
+  if (state.nf === 'nao') N.push('Nota Fiscal');
+  return N;
+}
+function totais() {
+  const I = itens();
+  const soma = (pag, campo) => I.filter(i => i.pag === pag && i[campo]).reduce((s, i) => s + i[campo], 0);
+  const cartao = soma('cartao', 'mensal'), cartaoAnual = soma('cartao', 'anualMes'), boleto = soma('boleto', 'mensal');
+  return {
+    I, cartao, cartaoAnual, boleto,
+    sob: I.some(i => i.sob),
+    nomesCartao: I.filter(i => i.pag === 'cartao').map(i => i.nome.replace('Sistema de Gestão', 'Sistema').replace('Emissor de ', '')),
+    nomesBoleto: I.filter(i => i.pag === 'boleto').map(i => i.nome.replace(' com WhatsApp', '')),
+    economiaAno: (cartao - cartaoAnual) * 12
+  };
+}
+
+/* ---------- Render ---------- */
+function renderProgress() {
+  $('#progress').innerHTML = STEPS.map((s, i) => {
+    const cls = s.id === 'financeiro' && pulaFinanceiro() ? 'skipped' : i < state.step ? 'done' : i === state.step ? 'current' : '';
+    return `<li class="${cls}"><div class="bar"><i></i></div><div class="lbl">${i + 1}. ${s.label}</div></li>`;
+  }).join('');
+}
+function renderValue() {
+  const v = VALUE[STEPS[state.step].id];
+  $('#valueBox').innerHTML = `
+    <div class="vb-kicker">${v.kicker}</div><h4>${v.title}</h4>
+    <ul>${v.items.map(([ic, t, d]) => `<li><span class="ic">${ic}</span><span><b>${t}</b>${d}</span></li>`).join('')}</ul>
+    ${v.quote ? `<div class="quote"><div class="stars">★★★★★</div>“${v.quote[0]}”<cite>${v.quote[1]}</cite></div>` : ''}`;
+}
+// Painel lateral: só o que foi escolhido, sem valores (preço aparece apenas no final)
+function renderSide() {
+  const I = itens();
+  $('#pbLines').innerHTML = I.length
+    ? I.map(i => `<li><span><span class="pk">✓</span>${i.nome}<br><small style="color:var(--muted);margin-left:20px">${i.sub}</small></span></li>`).join('')
+    : '<li class="empty">Responda as etapas e acompanhe aqui o que entra no seu plano.</li>';
+  const n = I.length;
+  $('#mbCount').textContent = n ? `${n} ${n > 1 ? 'itens escolhidos' : 'item escolhido'}` : 'Nenhum módulo ainda';
+}
+function renderTiers() {
+  const finSim = state.financeiro === 'sim';
+  $('#tiers').innerHTML = CONFIG.planos.map(p => {
+    const disabled = finSim && !p.financeiro;
+    const veh = p.veiculos
+      ? `<span class="t-top">até</span><span class="t-veh">${p.veiculos} <small>veículos</small></span>`
+      : `<span class="t-top">acima de</span><span class="t-veh">${p.acima} <small>veículos</small></span>`;
+    const tag = p.financeiro ? `<span class="t-tag fin">✓ Financeiro incluso</span>` : `<span class="t-tag nofin">Sem financeiro</span>`;
+    return `<button class="tier ${state.plano === p.id ? 'selected' : ''}" data-plano="${p.id}" ${disabled ? 'disabled title="Este plano não inclui o módulo financeiro"' : ''}>
+      <span class="ribbon">${p.nome.replace('Plano personalizado', 'Personalizado')}</span>${veh}<span class="t-top" style="margin-top:2px">${p.destaque}</span>${tag}</button>`;
+  }).join('');
+  $$('#tiers .tier').forEach(b => b.onclick = () => { state.plano = b.dataset.plano; update(); });
+}
+function renderUsers() {
+  const inc = CONFIG.crm.usuariosInclusos, ex = usuariosExtras();
+  $('#usrCount').textContent = state.usuarios;
+  $('#usrMinus').disabled = state.usuarios <= 1;
+  $('#usrPlus').disabled = state.usuarios >= CONFIG.crm.maxUsuarios;
+  $('#usersInfo').innerHTML = `<b>${inc} usuários já inclusos</b> no CRM.` +
+    (ex > 0 ? `<br>+ ${ex} usuário${ex > 1 ? 's' : ''} adicional${ex > 1 ? 'is' : ''} — aparece${ex > 1 ? 'm' : ''} no resumo final.`.replace('adicionalis', 'adicionais') : '');
+}
+function renderAddons() {
+  $$('.addon-slot').forEach(slot => {
+    const k = slot.dataset.addon, a = CONFIG.addons[k], on = state.addons[k];
+    slot.innerHTML = `<button type="button" class="addon ${on ? 'selected' : ''}" data-addon-btn="${k}" aria-pressed="${on}">
+      <span class="ck">${on ? '✓' : ''}</span>
+      <span class="a-body"><span class="a-tag">+ Complemento</span><span class="a-name">${a.nome}</span>
+        <span class="a-desc">${a.desc}</span>
+        <span class="a-items">${a.itens.map(i => `<span>${i}</span>`).join('')}</span></span>
+    </button>`;
+  });
+  $$('[data-addon-btn]').forEach(b => b.onclick = () => {
+    const k = b.dataset.addonBtn;
+    state.addons[k] = !state.addons[k];
+    if (state.addons[k]) toast(TOASTS[`addon_${k}`]);
+    update();
+  });
+}
+
+function splitRow(tipo, titulo, desc, valor) {
+  return `<div class="split-row"><span class="sp-ic ${tipo}">${IC[tipo]}</span>
+    <span class="sp-t"><b>${titulo}</b><small>${desc}</small></span><span class="sp-v">${valor}</span></div>`;
+}
+function billCard(tipo, T, only) {
+  const anual = tipo === 'anual';
+  const cartaoMes = anual ? T.cartaoAnual : T.cartao;
+  const total = cartaoMes + T.boleto;
+  const sobTxt = T.sob ? ' + gestão sob consulta' : '';
+  let rows = '';
+  if (T.nomesCartao.length) {
+    const v = T.sob && !cartaoMes ? 'Sob consulta'
+      : anual ? `12x de ${brl(cartaoMes)}` : `${brl(cartaoMes)}<small>/mês</small>`;
+    rows += splitRow('card', 'Cartão de crédito', T.nomesCartao.join(' + ') + (T.sob ? ' · gestão sob consulta' : ''), v);
+  }
+  if (T.boleto) rows += splitRow('boleto', 'Boleto pós-pago', `${T.nomesBoleto.join(' + ')} · na virada do mês`, `${brl(T.boleto)}<small>/mês</small>`);
+
+  let extra = '';
+  if (anual) {
+    if (T.economiaAno > 0) extra = `<span class="save">Economia de ${brl(T.economiaAno)} por ano</span>`;
+  } else if (T.cartao > 0) {
+    const pl = T.cartao * (1 - CONFIG.descontoPlatinum);
+    extra = `<div class="platinum">
+      <div class="pl-top"><i></i>Performou Platinum? 50% OFF</div>
+      <div class="pl-val">${brl(pl + T.boleto)}<small style="font-size:12px;font-weight:500">/mês${sobTxt}</small> <s>${brl(total)}</s></div>
+      <p>Lojas que performam no nível Platinum pagam metade da mensalidade do sistema (${brl(pl)} no cartão).</p>
+    </div>`;
+  }
+  return `<button class="bill ${only ? 'only' : ''} ${state.billing === tipo ? 'selected' : ''}" data-billing="${tipo}">
+    ${anual ? '<span class="b-badge">🔥 Mais econômico</span>' : ''}
+    <span class="b-name">${anual ? 'Anual' : 'Mensal'}</span>
+    <span class="b-lbl">Mensalidade total</span>
+    <span class="b-price">${total ? brl(total) : 'Sob consulta'} <small>${total ? '/mês' : ''}</small></span>
+    <span class="b-day">${T.sob ? 'Gestão personalizada: valor enviado pelo seu consultor' : `Equivale a cerca de ${brl(total / 30)} por dia`}</span>
+    <div class="split">${rows}</div>
+    ${extra}
+  </button>`;
+}
+function renderResumo() {
+  const T = totais();
+  // O que está incluso — valor antes do preço
+  $('#inclGrid').innerHTML = T.I.map(i => `<div class="incl"><span class="i-ck">✓</span><span><b>${i.nome}</b><small>${i.sub} · ${i.beneficio}</small></span></div>`).join('') +
+    `<div class="incl always"><span class="i-ck">★</span><span><b>Sempre incluso</b><small>Suporte em menos de 2 min, backup em 3 lugares e servidores AWS</small></span></div>`;
+
+  // Sem nada no cartão não existe anual: mostra só o mensal
+  const soMensal = !T.cartao && !T.sob;
+  if (soMensal) state.billing = 'mensal';
+  $('#billing').innerHTML = billCard('mensal', T, soMensal) + (soMensal ? '' : billCard('anual', T, false));
+  $$('#billing .bill').forEach(b => b.onclick = () => {
+    const changed = state.billing !== b.dataset.billing;
+    state.billing = b.dataset.billing;
+    if (changed && state.billing === 'anual' && T.economiaAno > 0) toast(`Plano anual: você economiza ${brl(T.economiaAno)} por ano`);
+    if (changed && state.billing === 'mensal' && T.cartao > 0) toast('Performando Platinum, o sistema sai pela metade');
+    renderResumo();
+  });
+
+  // Detalhamento por módulo
+  const pagTxt = { cartao: 'cartão', boleto: 'boleto' };
+  $('#summaryList').innerHTML = T.I.map(i => {
+    let v, cls = 'vl';
+    if (i.sob) v = 'Sob consulta';
+    else if (i.pag === 'incl') { v = 'Incluso'; cls += ' incl'; }
+    else v = (i.mensal !== i.anualMes ? `${brl(i.mensal)} <small style="color:var(--muted);font-weight:500">· anual ${brl(i.anualMes)}</small>` : brl(i.mensal)) + '/mês';
+    return `<li><span class="nm"><b>${i.nome}</b><small>${i.sub}${pagTxt[i.pag] ? ' · ' + pagTxt[i.pag] : ''}</small></span><span class="${cls}">${v}</span></li>`;
+  }).join('');
+
+  // Como funciona a cobrança
+  const notas = [];
+  if (T.nomesCartao.length) notas.push('<b>Cartão de crédito:</b> sistema e módulos, mês a mês no mensal ou em 12x no anual.');
+  if (state.crm === 'sim') notas.push(`<b>CRM${addonAtivo('sdr') ? ' e IA SDR' : ''}:</b> cobrança pós-paga, via boleto, na virada de cada mês. Cada usuário adicional do CRM custa ${brl(CONFIG.crm.precoUsuarioExtra)}/mês.`);
+  if (addonAtivo('sdr')) notas.push(`<b>IA SDR:</b> pacote de até ${CONFIG.addons.sdr.leads} leads/mês; acima disso, ${brl(CONFIG.addons.sdr.excedente)} por lead. Sem fidelidade.`);
+  if (T.cartao > 0) notas.push('<b>Desconto Platinum:</b> 50% na mensalidade do sistema (parte do cartão) para lojas que performam Platinum.');
+  $('#cobranca').innerHTML = `<b class="ct">Como funciona a cobrança</b><ul>${notas.map(n => `<li>${n}</li>`).join('')}</ul>`;
+
+  $('#waBtn').disabled = !state.billing;
+  $('#waLabel').textContent = state.billing ? `Enviar meu plano ${state.billing} para ${CONSULTOR}` : 'Selecione mensal ou anual';
+}
+function canNext(id) {
+  if (id === 'gestao') return !!state.gestao;
+  if (id === 'financeiro') return !!state.financeiro && !!state.plano && !(state.financeiro === 'sim' && !planoSel().financeiro);
+  if (id === 'crm') return !!state.crm;
+  if (id === 'nf') return !!state.nf && algumProduto();
+  return true;
+}
+function update() {
+  const id = STEPS[state.step].id;
+  $$('.step').forEach(s => s.classList.toggle('active', s.dataset.step === id));
+  $$('.choices').forEach(c => {
+    const f = c.dataset.field;
+    c.querySelectorAll('.choice').forEach(b => b.classList.toggle('selected', state[f] === b.dataset.value));
+  });
+  $('#semGestaoNotice').classList.toggle('hidden', state.gestao !== 'nao');
+  $('#finNaoNotice').classList.toggle('hidden', state.financeiro !== 'nao');
+  $('#finSimNotice').classList.toggle('hidden', state.financeiro !== 'sim');
+  $('#tiersReveal').classList.toggle('hidden', !state.financeiro);
+  $('#customNotice').classList.toggle('hidden', state.plano !== 'pmais');
+  $('#crmReveal').classList.toggle('hidden', state.crm !== 'sim');
+  $('#gestaoReveal').classList.toggle('hidden', state.gestao !== 'sim');
+  $('#nfReveal').classList.toggle('hidden', state.nf !== 'sim');
+  $('#nadaNotice').classList.toggle('hidden', !(state.nf && !algumProduto()));
+  if (state.financeiro) renderTiers();
+  renderUsers(); renderAddons();
+  const nextBtn = $(`.step[data-step="${id}"] [data-next]`);
+  if (nextBtn) nextBtn.disabled = !canNext(id);
+  if (id === 'resumo') renderResumo();
+  renderProgress(); renderValue(); renderSide();
+}
+
+/* ---------- Toast ---------- */
+let toastT;
+function toast(msg) {
+  if (!msg) return;
+  $('#toastText').textContent = msg;
+  $('#toast').classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(() => $('#toast').classList.remove('show'), 2600);
+}
+
+/* ---------- Eventos ---------- */
+$$('.choices').forEach(c => c.addEventListener('click', e => {
+  const b = e.target.closest('.choice'); if (!b) return;
+  const f = c.dataset.field, v = b.dataset.value;
+  const changed = state[f] !== v;
+  state[f] = v;
+  if (f === 'financeiro' && v === 'sim' && planoSel() && !planoSel().financeiro) state.plano = null;
+  if (changed && v === 'sim') toast(TOASTS[`${f}_sim`]);
+  update();
+}));
+// sem Sistema de Gestão, a etapa de financeiro/estoque é pulada
+const skip = i => STEPS[i] && STEPS[i].id === 'financeiro' && pulaFinanceiro();
+$$('[data-next]').forEach(b => b.addEventListener('click', () => {
+  if (state.step < STEPS.length - 1) { state.step++; if (skip(state.step)) state.step++; update(); scrollToTop(); }
+}));
+$$('[data-back]').forEach(b => b.addEventListener('click', () => {
+  if (state.step > 0) { state.step--; if (skip(state.step)) state.step--; update(); scrollToTop(); }
+}));
+$('#usrMinus').onclick = () => { state.usuarios = Math.max(1, state.usuarios - 1); update(); };
+$('#usrPlus').onclick = () => { state.usuarios = Math.min(CONFIG.crm.maxUsuarios, state.usuarios + 1); update(); };
+
+function scrollToTop() {
+  const y = $('#montador').getBoundingClientRect().top + window.scrollY - 70;
+  if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
+}
+function restart() {
+  Object.assign(state, initialState());
+  update(); scrollToTop();
+}
+
+/* ---------- WhatsApp ---------- */
+function buildMessage() {
+  const loja = ($('#lojaInput').value || LOJA_URL).trim();
+  const T = totais();
+  const anual = state.billing === 'anual';
+  const cartaoMes = anual ? T.cartaoAnual : T.cartao;
+  let msg = `Olá, ${CONSULTOR}! ${loja ? `Aqui é da loja *${loja}*. ` : ''}Montei meu novo plano Revenda Mais:\n\n`;
+  msg += T.I.map(i => {
+    const v = i.sob ? 'sob consulta' : i.pag === 'incl' ? 'incluso' : `${brl(anual ? i.anualMes : i.mensal)}/mês (${i.pag === 'boleto' ? 'boleto' : 'cartão'})`;
+    return `• ${i.nome} — ${i.sub}: ${v}`;
+  }).join('\n');
+  const nao = naoIncluidos();
+  if (nao.length) msg += `\n\nNão incluí: ${nao.join(', ')}.`;
+  msg += `\n\n*Formato escolhido: ${anual ? 'ANUAL' : 'MENSAL'}*\n`;
+  if (T.nomesCartao.length) msg += `💳 Cartão de crédito (${T.nomesCartao.join(' + ')}): ${T.sob && !cartaoMes ? 'sob consulta' : anual ? `12x de ${brl(cartaoMes)}` : `${brl(cartaoMes)}/mês`}${T.sob && cartaoMes ? ' + gestão sob consulta' : ''}\n`;
+  if (T.boleto) msg += `🧾 Boleto pós-pago (${T.nomesBoleto.join(' + ')}): ${brl(T.boleto)}/mês\n`;
+  msg += `*Mensalidade total: ${brl(cartaoMes + T.boleto)}/mês${T.sob ? ' + gestão personalizada sob consulta' : ''}*`;
+  if (anual && T.economiaAno > 0) msg += `\n(economia de ${brl(T.economiaAno)} por ano no anual)`;
+  if (!anual && T.cartao > 0) msg += `\n\nTambém quero saber sobre o desconto de 50% para lojas que performam Platinum.`;
+  msg += `\n\nQuero manter meu plano nesse formato. Podemos seguir?`;
+  return msg;
+}
+function sendWhatsApp() {
+  const text = encodeURIComponent(buildMessage());
+  const url = WA ? `https://wa.me/${WA}?text=${text}` : `https://wa.me/?text=${text}`;
+  window.open(url, '_blank', 'noopener');
+}
+
+/* ---------- Init ---------- */
+(function init() {
+  $('#consultorNome').textContent = CONSULTOR;
+  $('#consultorAv').textContent = CONSULTOR.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  if (LOJA_URL) { $('#lojaInput').value = LOJA_URL; $('#heroLoja').textContent = LOJA_URL; }
+  const p1 = CONFIG.planos.find(p => p.financeiro && p.veiculos);
+  $$('.fin-plan-label').forEach(e => e.textContent = CONFIG.planoMinimoFinanceiro);
+  $$('.fin-min-veh').forEach(e => e.textContent = p1 ? p1.veiculos : '');
+  $$('.crm-incl').forEach(e => e.textContent = CONFIG.crm.usuariosInclusos);
+  update();
+})();
+</script>
+</body>
+</html>
